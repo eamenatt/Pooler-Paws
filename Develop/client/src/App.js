@@ -4,17 +4,21 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Books />
-          </Route>
+          </Route> */}
           <Route exact path="/About">
             <About />
+          </Route>
+          <Route exact path="/Contact">
+            <Contact />
           </Route>
           <Route exact path="/books/:id">
             <Detail />
