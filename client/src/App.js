@@ -5,6 +5,7 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   return (
@@ -20,9 +21,12 @@ function App() {
           <Route exact path="/Contact">
             <Contact />
           </Route>
-          <Route exact path="/books/:id">
-            <Detail />
+          <Route exact path="/Portfolio">
+            <Portfolio />
           </Route>
+          {/* <Route exact path="/books/:id">
+            <Detail />
+          </Route> */}
           <Route>
             <NoMatch />
           </Route>
