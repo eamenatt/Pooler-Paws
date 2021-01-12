@@ -3,7 +3,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Slides from "../components/Slides";
 
-function About() {
+function Home() {
     return (
         <div>
             <Navigation />
@@ -41,4 +41,4 @@ function About() {
     )
 }
 
-export default About;
+export default Home;
