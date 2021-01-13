@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 
+
 function Contact() {
     return (
         <div>
@@ -25,6 +26,7 @@ function Contact() {
                 </Col>
             </Row>
         </div>
+       
     )
 }
 

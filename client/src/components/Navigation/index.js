@@ -1,31 +1,29 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
+import "./style.css";
+import { Navbar, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
 
 function Navigation() {
   return (
-    // <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-    //   <a className="navbar-brand" href="/">
-    //     React Reading List
-    //   </a>
-    // </nav>
     <Nav
       activeKey="/home"
       onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
-      <Nav.Item>
-        <Nav.Link href="/home">Active</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1">Link</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-2">Link</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="disabled" disabled>
-          Disabled
-    </Nav.Link>
-      </Nav.Item>
+
+      <Nav defaultActiveKey="/home" as="ul">
+        <Nav.Item as="li">
+          <Nav.Link className="navBar" href="/home">Sign Up</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link className="navBar" href="link-1">Contact Us</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link className="navBar" href="link-2">Pet List</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link className="navBar" href="link-2">Add a new pet</Nav.Link>
+        </Nav.Item>
+      </Nav>
     </Nav>
   );
 }

@@ -2,16 +2,26 @@ import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Slides from "../components/Slides";
+import Header from "../components/Header";
+import Jumbotron from 'react-bootstrap/jumbotron';
+import Button from 'react-bootstrap/button';
+
+import "./style.css";
+
 
 function About() {
     return (
+
         <div>
+            <Header />
             <Navigation />
             <Slides />
-            <h2>Our Story</h2>
+            <br></br>
+
             <Row>
                 <div>
-                    <p>
+                    <h2>About Us</h2>
+                    <p> 
                         We are a local non-profit organization helping the feral cat community in Pooler, GA. Our
                         members
                         are kind hearted, caring, generous cat loving humans! Our mission is to trap, neuter and return
@@ -23,20 +33,21 @@ function About() {
                         9 members in our group. These individuals provide their time and money to care for these
                         animals.
                     </p>
-                </div>
-            </Row>
-            <h2>How can you help?</h2>
-            <Row>
-                <div>
-                    <p>
-                        We are so happy you’re interested in getting involved with our work here at Pooler Paws Inc..
-                        There
-                        are so many ways for you to help, and we truly appreciate each and every effort. By lending your
-                        support, you’ll become a valuable part of our Nonprofit Organization and help to strengthen our
-                        operations. Please <a href="./contact.html">Contact Us</a> for information on ways you can help.
+                    <Jumbotron>
+                        <h3>How can you help?</h3>
+                        <p> 
+                            We are so happy you’re interested in getting involved with our work here at Pooler Paws Inc..
+                            There are so many ways for you to help, and we truly appreciate each and every effort. By lending your
+                            support, you’ll become a valuable part of our Nonprofit Organization and help to strengthen our
+                            operations. Please contact us for information on ways you can help.
                     </p>
+                        <p>
+                        <Button variant="outline-secondary">Contact Us</Button>{' '}
+                        </p>
+                    </Jumbotron>
                 </div>
             </Row>
+
         </div>
     )
 }
