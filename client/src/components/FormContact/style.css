@@ -1,0 +1,36 @@
+
+
+  .FormContainer{
+    margin: 0 auto;
+    width:60%;
+    position: relative;
+  }
+
+.h5{
+    color:gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+}
+
+label{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:grey;
+}
+
+.input-field{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+}
+
+form{
+    align-items: center;
+    position: relative;
+}
+
+.send-form{
+    font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  
+}

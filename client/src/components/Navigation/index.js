@@ -15,7 +15,7 @@ function Navigation() {
           <Nav.Link className="navBar" href="/home">Sign Up</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="navBar" href="link-1">Contact Us</Nav.Link>
+          <Nav.Link className="navBar" href="/contact">Contact Us</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
           <Nav.Link className="navBar" href="link-2">Pet List</Nav.Link>
