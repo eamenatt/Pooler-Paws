@@ -1,3 +1,4 @@
 module.exports = {
-  Book: require("./book")
+  Cat: require("./cat"),
+  User: require("./user")
 };
