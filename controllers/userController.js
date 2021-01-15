@@ -50,10 +50,8 @@ module.exports = {
       const salt = await bcrypt.genSalt();
       const passwordHash = await bcrypt.hash(password, salt);
       //console.log(passwordHash);
-      //console.log(name);
 
       const newUser = new db.User({
-        name: req.body.name,
         email: req.body.email,
         username: req.body.username,
         password: passwordHash,
