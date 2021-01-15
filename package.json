@@ -40,7 +40,6 @@
     "path": "^0.12.7",
     "react-gauge-chart": "^0.3.0",
     "redux-react-session": "^2.6.1",
-    "serv": "^0.2.4",
     "use-force-update": "^1.0.7"
   }
 }

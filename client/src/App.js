@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
-import Welcome from "./pages/Welcome";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
-import Admin from "./pages/Admin";
 import Contact from "./pages/Contact.js";
-import Cats from "./pages/Portfolio";
+import Portfolio from "./pages/Portfolio";
+import Submit from "./pages/Submit";
+import Home from "./pages/Home";
 import UserContext from "./context/userContext";
 
 function App() {
@@ -49,38 +49,6 @@ function App() {
     <Router>
       <UserContext.Provider value={{ user, setUser }}>
         <Switch>
-
-        </Switch>
-        <Route exact path="/Contact">
-          <Contact />
-        </Route>
-        <Route exact path="/Portfolio">
-          <Portfolio />
-        </Route>
-        <Route exact path="/Submit">
-          <Submit />
-        </Route>
-        <Route exact path={"/signin"}>
-          <SignUp />
-        </Route>
-        <Route exact path={"/signup"}>
-          <SignUp />
-        </Route>
-        <Route exact path={["/Home", "/"]}>
-          <Home />
-        </Route>
-      </UserContext.Provider>
-    </Router>
-
-  )
-}
-
-export default App;
-function App() {
-  return (
-    <Router>
-      <div>
-        <Switch>
           <Route exact path="/Contact">
             <Contact />
           </Route>
@@ -90,16 +58,21 @@ function App() {
           <Route exact path="/Submit">
             <Submit />
           </Route>
+          <Route exact path={"/signin"}>
+            <SignIn />
+          </Route>
+          <Route exact path={"/signup"}>
+            <SignUp />
+          </Route>
           <Route exact path={["/Home", "/"]}>
             <Home />
           </Route>
-          <Route>
-            <NoMatch />
-          </Route>
         </Switch>
-      </div>
+
+      </UserContext.Provider>
     </Router>
-  );
+
+  )
 }
 
 export default App;

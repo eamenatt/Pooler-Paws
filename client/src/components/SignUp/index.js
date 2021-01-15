@@ -26,7 +26,7 @@ function SignUp() {
       };
       console.log(newUser);
       await API.saveUser(newUser);
-      //console.log("i am here")
+      console.log("i am here")
       const loginRes = await API.loginUser({
         username: newUser.username,
         password: newUser.password,
@@ -99,19 +99,6 @@ function SignUp() {
                   onChange={handleChange}
                   placeholder="Password"
                 />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="gridCheck"
-                />
-                <label className="form-check-label" htmlFor="gridCheck">
-                  By checking this box, you agree to the{" "}
-                  <a href="*">terms and service</a> of this site.
-								</label>
               </div>
             </div>
             <button type="submit" className="inverted" id="signup-login-btn">
