@@ -15,14 +15,30 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "12.18.4",
+    "yarn": "1.22.5"
+  },
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.16.3",
+    "express-jwt": "^6.0.0",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16"
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.3.16",
+    "path": "^0.12.7",
+    "react-gauge-chart": "^0.3.0",
+    "redux-react-session": "^2.6.1",
+    "serv": "^0.2.4",
+    "use-force-update": "^1.0.7"
   }
 }
