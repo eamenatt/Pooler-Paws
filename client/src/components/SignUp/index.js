@@ -1,11 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import "./style.css";
 import API from "../../utils/API";
 import UserContext from "../../context/userContext";
-// import validate from "../FormValidation/SignUpFormRules";
-
-// import background from "../../assets/pexels-tiger-lily-4481323.jpg"
 
 function SignUp() {
   const history = useHistory();
@@ -24,13 +20,9 @@ function SignUp() {
 
     try {
       const newUser = {
-        name: values.firstName + " " + values.lastName,
         email: values.email,
-        phone: values.phone,
-        business: values.business,
         username: values.username,
-        password: values.password,
-        industry: values.industry,
+        password: values.password
       };
       console.log(newUser);
       await API.saveUser(newUser);
@@ -45,7 +37,7 @@ function SignUp() {
       });
       console.log(user);
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/inventory");
+      history.push("/Portfolio");
     } catch (err) {
       if (err.response.data.msg) {
         setError(err.response.data.msg);
@@ -59,10 +51,6 @@ function SignUp() {
         <div className="col-12">
           <form className="form-signup" onSubmit={handleSubmit}>
             <h2 align="center">Signup Today</h2>
-            <p>
-              Welcome! We're happy that you've decided to start you journey to
-              inventory bliss with us. Fill out the form below to get started.
-						</p>
             <div className="form-row">
               {error && (
                 <>
