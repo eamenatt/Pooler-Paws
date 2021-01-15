@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const catSchema = new Schema({
   name: { type: String, required: true },
   age: { type: Number, required: true },
-  details: { String, required: true },
+  details: { type: String, required: true },
   picture: {
     type: String,
     get: v => `${root}${v}`
