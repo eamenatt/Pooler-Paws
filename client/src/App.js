@@ -6,8 +6,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Admin from "./pages/Admin";
 import Contact from "./pages/Contact.js";
-import Inventory from "./pages/Inventory";
-import InventoryFill from "./pages/InventoryFill";
+import Cats from "./pages/Portfolio";
 import UserContext from "./context/userContext";
 
 function App() {
@@ -49,13 +48,27 @@ function App() {
 
     <Router>
       <UserContext.Provider value={{ user, setUser }}>
-        <Route exact path="/inventory" component={Inventory} />
-        <Route exact path="/" component={Welcome} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/signin" component={SignIn} />
-        <Route exact path="/admin " component={Admin} />
-        <Route exact path="/inventoryfill" component={InventoryFill} />
+        <Switch>
+
+        </Switch>
+        <Route exact path="/Contact">
+          <Contact />
+        </Route>
+        <Route exact path="/Portfolio">
+          <Portfolio />
+        </Route>
+        <Route exact path="/Submit">
+          <Submit />
+        </Route>
+        <Route exact path={"/signin"}>
+          <SignUp />
+        </Route>
+        <Route exact path={"/signup"}>
+          <SignUp />
+        </Route>
+        <Route exact path={["/Home", "/"]}>
+          <Home />
+        </Route>
       </UserContext.Provider>
     </Router>
 
