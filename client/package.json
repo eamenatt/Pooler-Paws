@@ -9,8 +9,10 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1",
+    "react-jotform-embed": "^1.1.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^4.0.1"
+    "react-scripts": "^4.0.1",
+    "web-vitals": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
