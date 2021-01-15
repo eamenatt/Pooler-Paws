@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 
-const PetContext = React.createContext({
-  pet: {},
-  petss: [],
-  handleBtnClick: () => {},
-});
+// const PetContext = React.createContext({
+//   pet: {},
+//   petss: [],
+//   handleBtnClick: () => {},
+// });
 
-export default PetContext;
+// export default PetContext;
