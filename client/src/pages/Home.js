@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/button';
 import "./style.css";
 
 
-function About() {
+function Home() {
     return (
 
         <div>
@@ -52,4 +52,4 @@ function About() {
     )
 }
 
-export default About;
+export default Home;

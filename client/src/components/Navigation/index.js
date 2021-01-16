@@ -7,21 +7,20 @@ function Navigation() {
   return (
     <Nav
       activeKey="/home"
-      onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
     >
 
-      <Nav defaultActiveKey="/home" as="ul">
+      <Nav defaultActiveKey="/Home" as="ul">
         <Nav.Item as="li">
-          <Nav.Link className="navBar" href="/home">Sign Up</Nav.Link>
+          <Nav.Link className="navBar" href="/">Sign Up</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="navBar" href="/contact">Contact Us</Nav.Link>
+          <Nav.Link className="navBar" href="/Contact">Contact Us</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="navBar" href="link-2">Pet List</Nav.Link>
+          <Nav.Link className="navBar" href="/Portfolio">Pet List</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="navBar" href="link-2">Add a new pet</Nav.Link>
+          <Nav.Link className="navBar" href="/Submit">Add a new pet</Nav.Link>
         </Nav.Item>
       </Nav>
     </Nav>
