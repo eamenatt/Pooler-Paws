@@ -5,11 +5,13 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
 import Submit from "./pages/Submit";
+import { StoreProvider } from "./utils/GlobalState";
 
 function App() {
   return (
     <Router>
       <div>
+        <StoreProvider>
         <Switch>
           <Route exact path="/Contact">
             <Contact />
@@ -30,6 +32,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
+        </StoreProvider>
       </div>
     </Router>
   );
