@@ -9,10 +9,11 @@
 .h5{
     color:gray;
     font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: xx-large;
+    font-size: xx-large;
 }
 
 label{
+    float:right;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color:grey;
 }
@@ -24,7 +25,9 @@ label{
     border-bottom: 1px solid black;
 }
 
+
 form{
+    float: left;
     align-items: center;
     position: relative;
 }
