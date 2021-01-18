@@ -34,7 +34,7 @@ function Portfolio() {
           <Col size="md-12">
             {state.cats.map(cat => (
               <Card key={cat._id} style={{ width: "100%" }}>
-                <Card.Img variant="top" src={cat.picture} />
+                <Card.Img variant="top" src={"./assets/" + cat.picture} />
                 <Card.Body>
                   <Card.Title>{cat.name}</Card.Title>
                   <Card.Text size="md" >{cat.age}</Card.Text>

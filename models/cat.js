@@ -9,7 +9,7 @@ const catSchema = new Schema({
     type: String,
     get: v => `${root}${v}`
   },
-  availability: { type: Date, default: Date.now }
+  availability: { type: Boolean, default: true }
 });
 
 const Cat = mongoose.model("Cat", catSchema);
