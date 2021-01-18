@@ -1,7 +1,7 @@
 import React from "react";
 import { Jumbotron } from "react-bootstrap";
 import Navigation from "../components/Navigation";
-import SearchForm from "../components/SearchForm";
+import SubmitForm from "../components/SubmitForm";
 
 function Submit() {
     return (
@@ -10,7 +10,7 @@ function Submit() {
             <Jumbotron>
                 <h1>Add a new animal</h1>
             </Jumbotron>
-            <SearchForm/>
+            <SubmitForm/>
         </div>
     )
 }
