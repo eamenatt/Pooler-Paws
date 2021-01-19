@@ -13,7 +13,6 @@ module.exports = {
   register: async (req, res) => {
     try {
       let {
-        name,
         email,
         username,
         password
@@ -21,7 +20,7 @@ module.exports = {
 
       // validate
 
-      if (!name || !email || !username || !password) {
+      if (!email || !username || !password) {
         return res
           .status(400)
           .json({ msg: "Not all fields have been entered." });

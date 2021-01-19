@@ -26,7 +26,7 @@ function SignUp() {
       };
       console.log(newUser);
       await API.saveUser(newUser);
-      console.log("i am here")
+      //console.log("i am here")
       const loginRes = await API.loginUser({
         username: newUser.username,
         password: newUser.password,
@@ -37,7 +37,7 @@ function SignUp() {
       });
       console.log(user);
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/Portfolio");
+      history.push("/");
     } catch (err) {
       if (err.response.data.msg) {
         setError(err.response.data.msg);
