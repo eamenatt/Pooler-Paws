@@ -42,7 +42,7 @@ function Home() {
                             operations. Please contact us for information on ways you can help.
                     </p>
                         <p>
-                        <Button variant="outline-secondary">Contact Us</Button>{' '}
+                        <Button className="send-form" variant="outline-secondary">Contact Us</Button>{' '}
                         </p>
                     </Jumbotron>
                 </div>

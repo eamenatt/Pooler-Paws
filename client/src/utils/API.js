@@ -2,6 +2,10 @@ import axios from "axios";
 
 export default {
 
+  // Gets all books
+  getCats: function() {
+    return axios.get("/api/cats");
+  },
   // Gets the book with the given id
   getuser: function (username) {
     return axios.get("/api/user/" + username);
@@ -23,5 +27,10 @@ export default {
   },
   updateUser: function (userId, id) {
     return axios.put("/api/user/update/" + userId, id)
+  },
+  // Saves a book to the database
+  saveCat: function(catData) {
+    console.log(catData);
+    return axios.post("/api/cats", catData);
   }
 };

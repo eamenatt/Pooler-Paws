@@ -8,6 +8,7 @@ import Portfolio from "./pages/Portfolio";
 import Submit from "./pages/Submit";
 import Home from "./pages/Home";
 import UserContext from "./context/userContext";
+import { StoreProvider } from "./utils/GlobalState";
 
 function App() {
   const [user, setUser] = useState({
@@ -48,8 +49,13 @@ function App() {
 
     <Router>
       <UserContext.Provider value={{ user, setUser }}>
+      <div>
+        <StoreProvider>
         <Switch>
           <Route exact path="/Contact">
+            <Contact />
+          </Route>
+          <Route exact path="/NewPet">
             <Contact />
           </Route>
           <Route exact path="/Portfolio">
@@ -69,7 +75,11 @@ function App() {
           </Route>
         </Switch>
 
+        </StoreProvider>
+
+      </div>
       </UserContext.Provider>
+
     </Router>
 
   )
