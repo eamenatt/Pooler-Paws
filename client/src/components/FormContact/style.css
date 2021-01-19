@@ -27,9 +27,9 @@ label{
 
 
 form{
-    float: left;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .send-form{

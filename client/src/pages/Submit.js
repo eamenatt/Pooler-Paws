@@ -2,15 +2,17 @@ import React from "react";
 import { Jumbotron } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import SearchForm from "../components/SearchForm";
+import Headers from "../components/Header";
 
 function Submit() {
     return (
         <div>
+            <Headers />
             <Navigation />
-            <Jumbotron>
-                <h1>Add a new animal</h1>
-            </Jumbotron>
-            <SearchForm/>
+
+            <h2>Add a new animal</h2>
+
+            <SearchForm />
         </div>
     )
 }

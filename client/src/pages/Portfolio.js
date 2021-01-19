@@ -1,10 +1,12 @@
 import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
+import Hearder from "../components/Header";
 
 function Portfolio() {
   return (
     <div>
+      <Hearder />
       <Navigation />
       <h2>Looking for a home</h2>
       <Container>
