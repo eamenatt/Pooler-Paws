@@ -117,7 +117,7 @@ module.exports = {
 
       const user = await db.User.findById(verified.id);
       if (!user) {
-        return res.josn(false);
+        return res.json(false);
       }
 
       return res.json(true);
