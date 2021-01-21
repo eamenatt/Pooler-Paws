@@ -1,7 +1,9 @@
 const router = require("express").Router();
-const catRoutes = require("./cats");
+const userRoute = require("./user");
+const catRoute = require("./cats");
 
-// Cat routes
-router.use("/cats", catRoutes);
+// User routes
+router.use("/user", userRoute);
+router.use("/cats", catRoute);
 
 module.exports = router;

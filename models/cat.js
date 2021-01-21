@@ -7,7 +7,7 @@ const catSchema = new Schema({
   details: { type: String, required: true },
   picture: {
     type: String,
-    get: v => `${root}${v}`
+    get: v => `${global}${v}`
   },
   availability: { type: Boolean, default: true }
 });
