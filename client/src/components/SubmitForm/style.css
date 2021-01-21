@@ -1,0 +1,10 @@
+.form{
+    /* float: left;
+    align-items: center;
+    position: relative; */
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  width: 33%;
+}

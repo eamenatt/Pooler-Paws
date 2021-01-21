@@ -5,10 +5,15 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Contact from "./pages/Contact.js";
 import Portfolio from "./pages/Portfolio";
+import NoMatch from "./pages/NoMatch";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import PetList from "./pages/PetList";
 import Submit from "./pages/Submit";
 import Home from "./pages/Home";
 import UserContext from "./context/userContext";
 import { StoreProvider } from "./utils/GlobalState";
+import User from "./pages/User";
 
 function App() {
   const [user, setUser] = useState({
@@ -48,35 +53,37 @@ function App() {
 
     <Router>
       <UserContext.Provider value={{ user, setUser }}>
-      <div>
-        <StoreProvider>
-        <Switch>
-          <Route exact path="/Contact">
-            <Contact />
-          </Route>
-          <Route exact path="/NewPet">
-            <Contact />
-          </Route>
-          <Route exact path="/Portfolio">
-            <Portfolio />
-          </Route>
-          <Route exact path="/Submit">
-            <Submit />
-          </Route>
-          <Route exact path={"/signin"}>
-            <SignIn />
-          </Route>
-          <Route exact path={"/signup"}>
-            <SignUp />
-          </Route>
-          <Route exact path={["/Home", "/"]}>
-            <Home />
-          </Route>
-        </Switch>
+        <div>
+          <StoreProvider>
+            <Switch>
+              <Route exact path="/Contact">
+                <Contact />
+              </Route>
+              <Route exact path="/NewPet">
+                <Contact />
+              </Route>
+              <Route exact path="/PetList">
+                <PetList />
+              </Route>
+              <Route exact path="/Submit">
+                <Submit />
+              </Route>
+              <Route exact path="/signin">
+                <SignIn />
+              </Route>
+              <Route exact path="/signup">
+                <SignUp />
+              </Route>
+              <Route exact path="/User">
+                <User />
+              </Route>
+              <Route exact path={["/Home", "/"]}>
+                <Home />
+              </Route>
+            </Switch>
+          </StoreProvider>
 
-        </StoreProvider>
-
-      </div>
+        </div>
       </UserContext.Provider>
 
     </Router>
