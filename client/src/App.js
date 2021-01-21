@@ -13,7 +13,7 @@ import { StoreProvider } from "./utils/GlobalState";
 function App() {
   const [user, setUser] = useState({
     token: undefined,
-    user: undefined,
+    user: undefined
   });
 
   useEffect(() => {
@@ -26,13 +26,13 @@ function App() {
       const tokenRes = await axios.post(
         "/api/user/validate",
         null,
-        { headers: { "x-auth-token": token } }
+        { headers: { "token": token } }
       );
       // console.log(tokenRes.data);
       if (tokenRes.data) {
         const userRes = await axios.get(
           "/api/user",
-          { headers: { "x-auth-token": token } }
+          { headers: { "token": token } }
         );
         setUser({
           token,
@@ -41,7 +41,7 @@ function App() {
       }
     };
 
-    checkLoggedIn();
+    // checkLoggedIn();
   }, []);
 
   return (
