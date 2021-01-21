@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import { useStoreContext } from "../utils/GlobalState";
-import { UPDATE_CATS, LOADING } from "../utils/actions";
+import { UPDATE_CATS, LOADING, ADD_FAVORITE, SET_CURRENT_CAT } from "../utils/actions";
 import API from "../utils/API";
 
 function Portfolio() {
@@ -12,7 +12,6 @@ function Portfolio() {
     dispatch({ type: LOADING });
     API.getCats()
       .then(results => {
-        console.log(results);
         dispatch({
           type: UPDATE_CATS,
           cats: results.data
@@ -20,6 +19,20 @@ function Portfolio() {
       })
       .catch(err => console.log(err));
   };
+
+  function addFavorite (e, id) {
+    e.preventDefault();
+    API.getCat(id)
+      .then(res => {
+        console.log(res.data);
+        dispatch({ type: SET_CURRENT_CAT, post: res.data });
+      })
+      .catch(err => console.log(err));
+  }
+
+  const adoptCat = () => {
+    console.log("cat adopted!")
+  }
 
   useEffect(() => {
     getCats();
@@ -42,6 +55,8 @@ function Portfolio() {
                     {cat.details}
                 </Card.Text>
                   <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
+                  <Button onClick={(event) => {addFavorite(event, cat._id)}}>Like</Button>
+                  <Button onClick={adoptCat}>Adopt</Button>
                 </Card.Body>
               </Card>
             ))}

@@ -6,12 +6,12 @@ export default {
     return axios.get("/api/cats");
   },
   // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
+  getCat: function(id) {
+    return axios.get("/api/cats/" + id);
   },
   // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  deleteCat: function(id) {
+    return axios.delete("/api/cats/" + id);
   },
   // Saves a book to the database
   saveCat: function(catData) {

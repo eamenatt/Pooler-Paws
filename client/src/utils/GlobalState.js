@@ -18,7 +18,7 @@ const reducer = (state, action) => {
   case SET_CURRENT_CAT:
     return {
       ...state,
-      currentCat: action.cat,
+      currentCat: action.currentCat,
       loading: false
     };
 
