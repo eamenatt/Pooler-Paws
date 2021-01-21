@@ -35,7 +35,7 @@ function SignIn() {
       });
       console.log(user);
       localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/Portfolio");
+      history.push("/Submit");
     } catch (err) {
       if (err.response.data.msg) {
         setError(err.response.data.msg);
