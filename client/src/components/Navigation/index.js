@@ -22,6 +22,9 @@ function Navigation() {
         <Nav.Item as="li">
           <Nav.Link className="navBar" href="/Submit">Add a new pet</Nav.Link>
         </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link className="navBar" href="/User">User Page</Nav.Link>
+        </Nav.Item>
       </Nav>
     </Nav>
   );

@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
 import Submit from "./pages/Submit";
 import { StoreProvider } from "./utils/GlobalState";
+import User from "./pages/User";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/Submit">
             <Submit />
+          </Route>
+          <Route exact path="/User">
+            <User />
           </Route>
           <Route exact path={["/Home", "/"]}>
             <Home />
