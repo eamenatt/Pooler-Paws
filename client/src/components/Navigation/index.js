@@ -17,7 +17,7 @@ function Navigation() {
           <Nav.Link className="navBar" href="/Contact">Contact Us</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="navBar" href="/Portfolio">Pet List</Nav.Link>
+          <Nav.Link className="navBar" href="/PetList">Pet List</Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
           <Nav.Link className="navBar" href="/Submit">Add a new pet</Nav.Link>

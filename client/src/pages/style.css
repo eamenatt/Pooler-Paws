@@ -51,12 +51,16 @@ font-family: 'Times New Roman', Times, serif;
 
 }
 
-.card-img-top{
+.cardStyle{
   border-radius: 8px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 33%;
+  width: 33%;
+  padding: 5px;
 }
 
-
+.card{
+  opacity: .97;
+  background-color: rgb(230, 230, 230);
+}
