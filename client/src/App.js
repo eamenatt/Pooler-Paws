@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Portfolio from "./pages/Portfolio";
+import PetList from "./pages/PetList";
 import Submit from "./pages/Submit";
 import { StoreProvider } from "./utils/GlobalState";
 import User from "./pages/User";
@@ -20,8 +20,8 @@ function App() {
           <Route exact path="/NewPet">
             <Contact />
           </Route>
-          <Route exact path="/Portfolio">
-            <Portfolio />
+          <Route exact path="/PetList">
+            <PetList />
           </Route>
           <Route exact path="/Submit">
             <Submit />
