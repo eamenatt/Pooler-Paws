@@ -19,7 +19,7 @@ p{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 75%;
     font-family: serif;
     font-size: large;
     letter-spacing:2px;
@@ -44,3 +44,19 @@ body{
 font-family: 'Times New Roman', Times, serif;
 
 }
+
+.scrollBox{
+  overflow: auto;
+  height: 100rem;
+
+}
+
+.card-img-top{
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 33%;
+}
+
+
