@@ -6,7 +6,7 @@ module.exports = {
   getUser: async (req, res) => {
     const user = await db.User.findById(req.user);
     res.json({
-      id: user._id,
+      _id: user._id,
       username: user.username,
     });
   },
@@ -88,14 +88,14 @@ module.exports = {
       const token = jwt.sign(
         {
           exp: Math.floor(Date.now() / 1000) + 60 * 60,
-          id: user._id,
+          _id: user._id,
         },
         "secret"
       );
       res.json({
         token,
         user: {
-          id: user._id,
+          _id: user._id,
           username: user.username
         },
       });
