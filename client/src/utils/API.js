@@ -7,6 +7,13 @@ export default {
     return axios.get("/api/cats");
   },
   // Gets the book with the given id
+  getCat: function(id) {
+    return axios.get("/api/cats/" + id);
+  },
+  // Deletes the book with the given id
+  deleteCat: function(id) {
+    return axios.delete("/api/cats/" + id);
+  },
   getuser: function (username) {
     return axios.get("/api/user/" + username);
   },

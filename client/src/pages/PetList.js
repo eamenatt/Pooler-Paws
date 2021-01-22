@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import { useStoreContext } from "../utils/GlobalState";
-import { UPDATE_CATS, LOADING } from "../utils/actions";
+import { UPDATE_CATS, LOADING, ADD_FAVORITE, SET_CURRENT_CAT, SET_CURRENT_USER } from "../utils/actions";
 import API from "../utils/API";
 import "./style.css";
 
@@ -14,7 +14,6 @@ function PetList() {
     dispatch({ type: LOADING });
     API.getCats()
       .then(results => {
-        console.log(results);
         dispatch({
           type: UPDATE_CATS,
           cats: results.data
@@ -22,6 +21,15 @@ function PetList() {
       })
       .catch(err => console.log(err));
   };
+
+  function addFavorite (e, id) {
+    e.preventDefault();
+    console.log(state.currentUser);
+  }
+
+  const adoptCat = () => {
+    console.log("cat adopted!")
+  }
 
   useEffect(() => {
     getCats();
@@ -45,6 +53,8 @@ function PetList() {
                     {cat.details}
                 </Card.Text>
                   <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
+                  <Button onClick={(event) => {addFavorite(event, cat._id)}}>Like</Button>
+                  <Button onClick={adoptCat}>Adopt</Button>
                 </Card.Body>
               </Card>
             ))}

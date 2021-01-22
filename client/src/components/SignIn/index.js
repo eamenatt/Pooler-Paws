@@ -1,110 +1,59 @@
-import React, { useState, useContext } from "react";
+import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
-import UserContext from "../../context/userContext";
+import { SET_CURRENT_USER } from "../../utils/actions";
+import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function SignIn() {
-  // const [userCode, setUserCode] = useState("")
-  const [values, setValues] = useState({});
-  const [error, setError] = useState();
-  const { user, setUser } = useContext(UserContext);
+  const [state, dispatch] = useStoreContext();
+
+  const usernameRef = useRef();
+  const passwordRef = useRef();
 
   const history = useHistory();
 
-  function handleInputChange(event) {
-    event.persist();
-    const { name, value } = event.target;
-    setValues({ ...values, [name]: value });
-  }
-
   async function handleFormSubmit(event) {
     event.preventDefault();
-    // console.log("sumbitting login data")
-    try {
-      const loginUser = {
-        username: values.username,
-        password: values.password,
-      };
-      const loginRes = await API.loginUser({
-        username: loginUser.username,
-        password: loginUser.password,
+    const loginUser = {
+      username: usernameRef.current.value,
+      password: passwordRef.current.value,
+    };
+    await API.loginUser({
+      username: loginUser.username,
+      password: loginUser.password,
+    }).then(res => {
+      dispatch({
+        type: SET_CURRENT_USER,
+        user: res.data.user
       });
-      setUser({
-        token: loginRes.data.token,
-        user: loginRes.data.user,
-      });
-      console.log(user);
-      localStorage.setItem("auth-token", loginRes.data.token);
-      history.push("/Submit");
-    } catch (err) {
-      if (err.response.data.msg) {
-        setError(err.response.data.msg);
-      }
-    }
-  }
+      localStorage.setItem("auth-token", res.data.token);
+      history.push("/");
+    }).catch((err) => {
+      console.log(err);
+    })
+  };
 
   return (
-    <div>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <form className="form-signin" onSubmit={handleFormSubmit}>
-              <h1 className="h3 mb-3">Please sign in...</h1>
-              {error && (
-                <>
-                  <div className="alert alert-danger" role="alert">
-                    {error}
-                  </div>
-                  <button
-                    type="button"
-                    className="close"
-                    data-dismiss="alert"
-                    aria-label="Close"
-                    onClick={() => setError(undefined)}
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </>
-              )}
-              <div className="form-group">
-                <label htmlFor="inputEmail" className="sr-only">
-                  Email Address
-								</label>
-                <input
-                  name="username"
-                  onChange={handleInputChange}
-                  type="text"
-                  id="inputEmail"
-                  className="form-control"
-                  placeholder="Email address"
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="inputPassword" className="sr-only">
-                  Password
-								</label>
-                <input
-                  name="password"
-                  onChange={handleInputChange}
-                  type="password"
-                  id="inputPassword"
-                  className="form-control"
-                  placeholder="Password"
-                />
-              </div>
-              <div className="checkbox mb-3">
-                <label>
-                  <input type="checkbox" value="remember-me" /> Remember me
-								</label>
-              </div>
-              <button className="inverted" id="signup-login-btn" type="submit">
-                Sign In <i className="fa fa-sign-in" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Form onSubmit={e => { handleFormSubmit(e) }}>
+      <Form.Group controlId="formBasicEmail">
+        <Form.Label>Username</Form.Label>
+        <Form.Control required ref={usernameRef} placeholder="Enter username" />
+        {/* <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text> */}
+      </Form.Group>
+
+      <Form.Group controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control required ref={passwordRef} type="password" placeholder="Password" />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+  </Button>
+    </Form>
+
   );
 }
 
