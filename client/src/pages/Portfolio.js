@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Hearder from "../components/Header";
+import ContactCard from "../components/ContactCard";
 
 function Portfolio() {
   return (
@@ -27,6 +28,7 @@ function Portfolio() {
         </Row>
 
       </Container>
+      <ContactCard />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { Jumbotron } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import SearchForm from "../components/SearchForm";
 import Headers from "../components/Header";
+import ContactCard from "../components/ContactCard";
 
 function Submit() {
     return (
@@ -13,6 +14,7 @@ function Submit() {
             <h2>Add a new animal</h2>
 
             <SearchForm />
+            <ContactCard />
         </div>
     )
 }
