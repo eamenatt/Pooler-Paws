@@ -31,11 +31,10 @@ function User() {
         <div>
         <Header/>
           <Navigation />
-          <h2>User Profile</h2>
+          <h2>Favorited Cats &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cats you've added</h2>
           <Container>
             <Row>
               <Col className="scrollBox" size="md-12">
-              <h2>Favorited Cats</h2>
                 {state.cats.map(cat => (
                   <Card key={cat._id} style={{ width: "100%" }}>
                     <Card.Img variant="top" src={"./assets/" + cat.picture} />
@@ -51,7 +50,6 @@ function User() {
                 ))}
               </Col>
               <Col className="scrollBox" size="md-12">
-              <h2>Added Cats</h2>
                 {state.cats.map(cat => (
                   <Card  key={cat._id} style={{ width: "100%" }}>
                     <Card.Img variant="top" src={"./assets/" + cat.picture} />

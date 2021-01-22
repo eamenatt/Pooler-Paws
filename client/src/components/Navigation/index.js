@@ -10,6 +10,9 @@ function Navigation() {
     >
 
       <Nav defaultActiveKey="/Home" as="ul">
+      <Nav.Item as="li">
+          <Nav.Link className="navBar" href="/home">Home</Nav.Link>
+        </Nav.Item>
         <Nav.Item as="li">
           <Nav.Link className="navBar" href="/signup">Sign Up</Nav.Link>
         </Nav.Item>

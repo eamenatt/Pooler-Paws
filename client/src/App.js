@@ -3,10 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
-import Contact from "./pages/Contact.js";
-import Portfolio from "./pages/Portfolio";
 import NoMatch from "./pages/NoMatch";
-import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import PetList from "./pages/PetList";
 import Submit from "./pages/Submit";
@@ -56,6 +53,9 @@ function App() {
         <div>
           <StoreProvider>
             <Switch>
+            <Route exact path="/Home">
+                <Home />
+              </Route>
               <Route exact path="/Contact">
                 <Contact />
               </Route>
