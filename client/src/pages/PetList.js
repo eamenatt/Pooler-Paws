@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
+<<<<<<< HEAD:client/src/pages/Portfolio.js
 <<<<<<< HEAD
 import Hearder from "../components/Header";
 import ContactCard from "../components/ContactCard";
@@ -9,8 +10,15 @@ import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_CATS, LOADING } from "../utils/actions";
 import API from "../utils/API";
 >>>>>>> main
+=======
+import Header from "../components/Header";
+import { useStoreContext } from "../utils/GlobalState";
+import { UPDATE_CATS, LOADING } from "../utils/actions";
+import API from "../utils/API";
+import "./style.css";
+>>>>>>> a27d180beafc8563b3348a2803b9c8517a23354e:client/src/pages/PetList.js
 
-function Portfolio() {
+function PetList() {
   const [state, dispatch] = useStoreContext();
 
   const getCats = () => {
@@ -32,7 +40,11 @@ function Portfolio() {
 
   return (
     <div>
+<<<<<<< HEAD:client/src/pages/Portfolio.js
       <Hearder />
+=======
+      <Header/>
+>>>>>>> a27d180beafc8563b3348a2803b9c8517a23354e:client/src/pages/PetList.js
       <Navigation />
       <h2>Looking for a home</h2>
       <Container>
@@ -40,7 +52,7 @@ function Portfolio() {
           <Col size="md-12">
             {state.cats.map(cat => (
               <Card key={cat._id} style={{ width: "100%" }}>
-                <Card.Img variant="top" src={"./assets/" + cat.picture} />
+                <Card.Img className="cardStyle" variant="top" src={"./assets/" + cat.picture} />
                 <Card.Body>
                   <Card.Title>{cat.name}</Card.Title>
                   <Card.Text size="md" >{cat.age}</Card.Text>
@@ -59,25 +71,4 @@ function Portfolio() {
   )
 }
 
-export default Portfolio;
-
-
-{/* <Jumbotron>
-              <h1>Cats On My List</h1>
-            </Jumbotron>
-            {cats.length ? (
-              <List>
-                {cats.map(cat => (
-                  <ListItem key={cat._id}>
-                    <Link to={"/cats/" + cat._id}>
-                      <strong>
-                        {cat.title} by {cat.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteCat(cat._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )} */}
+export default PetList;
