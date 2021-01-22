@@ -7,7 +7,8 @@ import {
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
-  LOADING
+  LOADING,
+  SET_CURRENT_USER
 } from "./actions";
 
 const StoreContext = createContext();
@@ -72,6 +73,14 @@ const reducer = (state, action) => {
       loading: true
     };
 
+  case SET_CURRENT_USER:
+    console.log(action.user);
+    return {
+      ...state,
+      currentUser: action.user,
+      loading: false
+    };
+
   default:
     return state;
   }
@@ -89,6 +98,10 @@ const StoreProvider = ({ value = [], ...props }) => {
       availability: true
     },
     favorites: [],
+    currentUser: {
+      _id: 0,
+      username: ""
+    },
     loading: false
   });
 

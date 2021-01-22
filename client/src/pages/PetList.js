@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import { useStoreContext } from "../utils/GlobalState";
-import { UPDATE_CATS, LOADING, ADD_FAVORITE, SET_CURRENT_CAT } from "../utils/actions";
+import { UPDATE_CATS, LOADING, ADD_FAVORITE, SET_CURRENT_CAT, SET_CURRENT_USER } from "../utils/actions";
 import API from "../utils/API";
 import "./style.css";
 
@@ -24,12 +24,7 @@ function PetList() {
 
   function addFavorite (e, id) {
     e.preventDefault();
-    API.getCat(id)
-      .then(res => {
-        console.log(res.data);
-        dispatch({ type: SET_CURRENT_CAT, post: res.data });
-      })
-      .catch(err => console.log(err));
+    console.log(state.currentUser);
   }
 
   const adoptCat = () => {
