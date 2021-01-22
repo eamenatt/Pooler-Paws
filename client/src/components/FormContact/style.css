@@ -27,9 +27,9 @@ label{
 
 
 form{
-    float: left;
     align-items: center;
     position: relative;
+    width: 100%;
 }
 
 .send-form{
@@ -37,3 +37,8 @@ form{
   font-family: 'Times New Roman', Times, serif;
   
 }
+
+.secondCol{
+  float: right;
+}
+
