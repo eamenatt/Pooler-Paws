@@ -16,78 +16,83 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-  case SET_CURRENT_CAT:
-    return {
-      ...state,
-      currentCat: action.currentCat,
-      loading: false
-    };
+    case SET_CURRENT_USER:
+      return {
+        ...state,
+        currentUser: action.user,
+        loading: false
+      };
 
-  case UPDATE_CATS:
-    return {
-      ...state,
-      cats: action.cats,
-      loading: false
-    };
+    case SET_CURRENT_CAT:
+      return {
+        ...state,
+        currentCat: action.currentCat,
+        loading: false
+      };
 
-  case ADD_CAT:
-    return {
-      ...state,
-      cats: [action.cat, ...state.cats],
-      loading: false
-    };
+    case UPDATE_CATS:
+      return {
+        ...state,
+        cats: action.cats,
+        loading: false
+      };
 
-  case REMOVE_CAT:
-    return {
-      ...state,
-      cats: state.cats.filter((cat) => {
-        return cat._id !== action._id; 
-      })
-    };
+    case ADD_CAT:
+      return {
+        ...state,
+        cats: [action.cat, ...state.cats],
+        loading: false
+      };
 
-  case ADD_FAVORITE:
-    return {
-      ...state,
-      favorites: [action.cat, ...state.favorites],
-      loading: false
-    };
+    case REMOVE_CAT:
+      return {
+        ...state,
+        cats: state.cats.filter((cat) => {
+          return cat._id !== action._id;
+        })
+      };
 
-  case UPDATE_FAVORITES:
-    return {
-      ...state,
-      favorites: [...state.favorites],
-      loading: false
-    };
+    case ADD_FAVORITE:
+      return {
+        ...state,
+        favorites: [action.cat, ...state.favorites],
+        loading: false
+      };
 
-  case REMOVE_FAVORITE:
-    return {
-      ...state,
-      favorites: state.favorites.filter((cat) => {
-        return cat._id !== action._id; 
-      })
-    };
+    case UPDATE_FAVORITES:
+      return {
+        ...state,
+        favorites: [...state.favorites],
+        loading: false
+      };
 
-  case LOADING:
-    return {
-      ...state,
-      loading: true
-    };
+    case REMOVE_FAVORITE:
+      return {
+        ...state,
+        favorites: state.favorites.filter((cat) => {
+          return cat._id !== action._id;
+        })
+      };
 
-  case SET_CURRENT_USER:
-    console.log(action.user);
-    return {
-      ...state,
-      currentUser: action.user,
-      loading: false
-    };
+    case LOADING:
+      return {
+        ...state,
+        loading: true
+      };
 
-  default:
-    return state;
+    default:
+      return state;
   }
 };
 
 const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
+    currentUser: {
+      _id: 0,
+      username: "",
+      email: "",
+      cats: []
+    },
     cats: [],
     currentCat: {
       _id: 0,
@@ -98,10 +103,6 @@ const StoreProvider = ({ value = [], ...props }) => {
       availability: true
     },
     favorites: [],
-    currentUser: {
-      _id: 0,
-      username: ""
-    },
     loading: false
   });
 
