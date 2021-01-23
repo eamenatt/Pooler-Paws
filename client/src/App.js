@@ -46,16 +46,16 @@ function App() {
         <div>
           <StoreProvider>
             <Switch>
-              <Route exact path="/Contact">
+              <Route exact path="/contact">
                 <Contact />
               </Route>
-              <Route exact path="/NewPet">
+              <Route exact path="/newpet">
                 <Contact />
               </Route>
-              <Route exact path="/PetList">
+              <Route exact path="/petlist">
                 <PetList />
               </Route>
-              <Route exact path="/Submit">
+              <Route exact path="/submit">
                 <Submit />
               </Route>
               <Route exact path="/signin">
@@ -64,10 +64,10 @@ function App() {
               <Route exact path="/signup">
                 <SignUp />
               </Route>
-              <Route exact path="/User">
+              <Route exact path="/user">
                 <User />
               </Route>
-              <Route exact path={["/Home", "/"]}>
+              <Route exact path={["/home", "/"]}>
                 <Home />
               </Route>
             </Switch>

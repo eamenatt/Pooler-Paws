@@ -9,7 +9,6 @@ import "./style.css";
 
 function PetList() {
   const [state, dispatch] = useStoreContext();
-
   const getCats = () => {
     dispatch({ type: LOADING });
     API.getCats()
