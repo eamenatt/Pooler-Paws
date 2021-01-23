@@ -54,9 +54,6 @@ font-family: 'Times New Roman', Times, serif;
 
 }
 
-<<<<<<< HEAD
-
-=======
 .scrollBox{
   overflow: auto;
   height: 100rem;
@@ -76,4 +73,3 @@ font-family: 'Times New Roman', Times, serif;
   opacity: .97;
   background-color: rgb(230, 230, 230);
 }
->>>>>>> a27d180beafc8563b3348a2803b9c8517a23354e

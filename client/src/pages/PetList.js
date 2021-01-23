@@ -1,22 +1,12 @@
 import React, { useEffect } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
-<<<<<<< HEAD:client/src/pages/Portfolio.js
-<<<<<<< HEAD
-import Hearder from "../components/Header";
 import ContactCard from "../components/ContactCard";
-=======
 import { useStoreContext } from "../utils/GlobalState";
-import { UPDATE_CATS, LOADING } from "../utils/actions";
 import API from "../utils/API";
->>>>>>> main
-=======
 import Header from "../components/Header";
-import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_CATS, LOADING, ADD_FAVORITE, SET_CURRENT_CAT, SET_CURRENT_USER } from "../utils/actions";
-import API from "../utils/API";
 import "./style.css";
->>>>>>> a27d180beafc8563b3348a2803b9c8517a23354e:client/src/pages/PetList.js
 
 function PetList() {
   const [state, dispatch] = useStoreContext();
@@ -47,11 +37,8 @@ function PetList() {
 
   return (
     <div>
-<<<<<<< HEAD:client/src/pages/Portfolio.js
-      <Hearder />
-=======
+
       <Header/>
->>>>>>> a27d180beafc8563b3348a2803b9c8517a23354e:client/src/pages/PetList.js
       <Navigation />
       <h2>Looking for a home</h2>
       <Container>
