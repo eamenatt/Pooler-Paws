@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
-import { SET_CURRENT_USER } from "../../utils/actions";
+import { SET_CURRENT_USER, LOADING } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
 import Form from "react-bootstrap/Form";
@@ -8,31 +8,28 @@ import Button from "react-bootstrap/Button";
 
 function SignIn() {
   const [state, dispatch] = useStoreContext();
-
   const usernameRef = useRef();
   const passwordRef = useRef();
-
   const history = useHistory();
 
-  async function handleFormSubmit(event) {
+  function handleFormSubmit(event) {
     event.preventDefault();
-    const loginUser = {
+    dispatch({type: LOADING});
+    API.loginUser({
       username: usernameRef.current.value,
       password: passwordRef.current.value,
-    };
-    await API.loginUser({
-      username: loginUser.username,
-      password: loginUser.password,
-    }).then(res => {
-      dispatch({
-        type: SET_CURRENT_USER,
-        user: res.data.user
-      });
-      localStorage.setItem("auth-token", res.data.token);
-      history.push("/");
-    }).catch((err) => {
-      console.log(err);
     })
+      .then(res => {
+        dispatch({
+          type: SET_CURRENT_USER,
+          user: res.data.user
+        });
+        localStorage.setItem("auth-token", res.data.token);
+        history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -51,7 +48,7 @@ function SignIn() {
       </Form.Group>
       <Button variant="primary" type="submit">
         Submit
-  </Button>
+      </Button>
     </Form>
 
   );

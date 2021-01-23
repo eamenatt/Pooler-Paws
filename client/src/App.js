@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import axios from "axios";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
-// import NoMatch from "./pages/NoMatch";
+import NoMatch from "./pages/NoMatch";
 import Contact from "./pages/Contact";
 import PetList from "./pages/PetList";
 import Submit from "./pages/Submit";
@@ -46,16 +46,16 @@ function App() {
         <div>
           <StoreProvider>
             <Switch>
-              <Route exact path="/Contact">
+              <Route exact path="/contact">
                 <Contact />
               </Route>
-              <Route exact path="/NewPet">
+              <Route exact path="/newpet">
                 <Contact />
               </Route>
-              <Route exact path="/PetList">
+              <Route exact path="/petlist">
                 <PetList />
               </Route>
-              <Route exact path="/Submit">
+              <Route exact path="/submit">
                 <Submit />
               </Route>
               <Route exact path="/signin">
@@ -64,10 +64,10 @@ function App() {
               <Route exact path="/signup">
                 <SignUp />
               </Route>
-              <Route exact path="/User">
+              <Route exact path="/user">
                 <User />
               </Route>
-              <Route exact path={["/Home", "/"]}>
+              <Route exact path={["/home", "/"]}>
                 <Home />
               </Route>
             </Switch>

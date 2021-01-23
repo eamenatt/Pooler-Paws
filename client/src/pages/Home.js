@@ -5,6 +5,9 @@ import Slides from "../components/Slides";
 import Header from "../components/Header";
 import Jumbotron from 'react-bootstrap/jumbotron';
 import Button from 'react-bootstrap/button';
+import {Link} from "react-router-dom";
+  
+
 
 import "./style.css";
 
@@ -15,7 +18,7 @@ function Home() {
         <div>
             <Header />
             <Navigation />
-            <Slides />
+            
             <br></br>
 
             <Row>
@@ -33,6 +36,7 @@ function Home() {
                         9 members in our group. These individuals provide their time and money to care for these
                         animals.
                     </p>
+                    <Slides/>
                     <Jumbotron>
                         <h3>How can you help?</h3>
                         <p> 
@@ -42,7 +46,9 @@ function Home() {
                             operations. Please contact us for information on ways you can help.
                     </p>
                         <p>
-                        <Button className="send-form" variant="outline-secondary">Contact Us</Button>{' '}
+                        <Link to="/Contact">
+                        <Button className="send-form" variant="outline-secondary">Contact Us</Button>
+                        </Link>
                         </p>
                     </Jumbotron>
                 </div>

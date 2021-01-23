@@ -65,22 +65,21 @@ module.exports = {
   },
   login: async (req, res) => {
     try {
-      const { username, password } = req.body;
 
       // validate
 
-      if (!username || !password) {
+      if (!req.body.username || !req.body.password) {
         return res
           .status(400)
           .json({ msg: "Not all fields have been entered." });
       }
 
-      const user = await db.User.findOne({ username });
+      const {_doc: user} = await db.User.findOne({ username: req.body.username });
       if (!user) {
         return res.status(400).json({ msg: "Username does not exist!" });
       }
 
-      const isMatch = await bcrypt.compare(password, user.password);
+      const isMatch = await bcrypt.compare(req.body.password, user.password);
       if (!isMatch) {
         return res.status(400).json({ msg: "Invalid password!" });
       }
@@ -92,12 +91,13 @@ module.exports = {
         },
         "secret"
       );
+
+      const {password, ...userData} = user;
+      // delete user.password;
+      console.log(userData);
       res.json({
         token,
-        user: {
-          _id: user._id,
-          username: user.username
-        },
+        user: userData
       });
     } catch (err) {
       res.status(500).json({ error: err.message });

@@ -15,30 +15,27 @@ function SignUp() {
   const history = useHistory();
 
   async function handleSubmit(event) {
-    event.preventDefault();
-    const newUser = {
-      email: emailRef.current.value,
-      username: usernameRef.current.value,
-      password: passwordRef.current.value
-    };
-    console.log(newUser);
-    await API.saveUser(newUser);
-    await API.loginUser({
-      username: newUser.username,
-      password: newUser.password,
-    })
-      .then(res => {
-        console.log(res.data.user);
-        dispatch({
-          type: SET_CURRENT_USER,
-          user: res.data.user
-        });
-        localStorage.setItem("auth-token", res.data.token);
-        history.push("/");
+    try {
+      event.preventDefault();
+      const newUser = {
+        email: emailRef.current.value,
+        username: usernameRef.current.value,
+        password: passwordRef.current.value
+      };
+      await API.saveUser(newUser);
+      const { data } = await API.loginUser({
+        username: newUser.username,
+        password: newUser.password,
       })
-      .catch((err) => {
-        console.log(err);
-      })
+      dispatch({
+        type: SET_CURRENT_USER,
+        user: data.user
+      });
+      localStorage.setItem("auth-token", data.token);
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

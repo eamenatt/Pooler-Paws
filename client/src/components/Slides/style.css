@@ -4,6 +4,7 @@
 }
 
 .title{
+<<<<<<< HEAD
     color: white;
 }
 
@@ -12,3 +13,17 @@
     width: 800px;
 }
 
+=======
+    color: rgb(245, 102, 7);
+}
+
+.title2{
+    color: rgb(124, 34, 160);
+}
+
+.slideStyle{
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+}
+>>>>>>> 2216039021f5db4f41542e67b82a823454d7fc5e
