@@ -20,7 +20,6 @@ function SubmitForm() {
       name: nameRef.current.value,
       age: parseInt(ageRef.current.value),
       details: detailsRef.current.value,
-      picture: pictureRef.current.value
     })
       .then(result => {
         dispatch({
@@ -49,40 +48,12 @@ function SubmitForm() {
         <Form.Label>Please provide a description of your cat.</Form.Label>
         <Form.Control as="textarea" required ref={detailsRef} placeholder="Provide description here (required)" rows={3} />
       </Form.Group>
-      <Form.Group>
-        <Form.File id="exampleFormControlFile1" ref={pictureRef} label="Let users know what your cat looks like!" />
-      </Form.Group>
       <Button variant="primary" disabled={state.loading} type="submit">
         Submit
       </Button>
+      <Form.Text>Have a picture? Please email it to admin@poolerpaws.com along with the pets name and it will be uploaded within 48 hours.</Form.Text>
     </Form>
   );
 }
-
-
-
-/* <form>
-              <Input
-                onChange={handleInputChange}
-                name="name"
-                placeholder="Name (required)"
-              />
-              <Input
-                onChange={handleInputChange}
-                name="age"
-                placeholder="Age (required)"
-              />
-              <TextArea
-                onChange={handleInputChange}
-                name="detailss"
-                placeholder="detailss (Required)"
-              />
-              <FormBtn
-                disabled={!(formObject.author && formObject.title && formObject.age)}
-                onClick={handleFormSubmit}
-              >
-                Add New Cat
-              </FormBtn>
-            </form> */
 
 export default SubmitForm;

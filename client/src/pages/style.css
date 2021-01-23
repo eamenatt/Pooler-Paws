@@ -1,7 +1,8 @@
 h2{
     padding: 20px;
   text-align: center;
-  background:transparent;
+  opacity: .97;
+  background-color: #fff;
   color: grey;
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -21,8 +22,9 @@ p{
     margin-right: auto;
     width: 75%;
     font-family: serif;
-    font-size: large;
-    letter-spacing:2px;
+    font-size: 1.5em;
+    letter-spacing:1px;
+    font-weight: bold;
 }
 
 body{

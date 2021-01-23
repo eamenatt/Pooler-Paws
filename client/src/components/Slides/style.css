@@ -4,5 +4,15 @@
 }
 
 .title{
-    color: white;
+    color: rgb(245, 102, 7);
+}
+
+.title2{
+    color: rgb(124, 34, 160);
+}
+
+.slideStyle{
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
 }
