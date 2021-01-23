@@ -1,30 +1,18 @@
 import React, { useEffect } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
-<<<<<<< HEAD:client/src/pages/Portfolio.js
-<<<<<<< HEAD
-import Hearder from "../components/Header";
-import ContactCard from "../components/ContactCard";
-=======
 import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_CATS, LOADING } from "../utils/actions";
 import API from "../utils/API";
->>>>>>> main
-=======
-import Header from "../components/Header";
-import { useStoreContext } from "../utils/GlobalState";
-import { UPDATE_CATS, LOADING, ADD_FAVORITE, SET_CURRENT_CAT, SET_CURRENT_USER } from "../utils/actions";
-import API from "../utils/API";
-import "./style.css";
->>>>>>> a27d180beafc8563b3348a2803b9c8517a23354e:client/src/pages/PetList.js
 
-function PetList() {
+function Portfolio() {
   const [state, dispatch] = useStoreContext();
 
   const getCats = () => {
     dispatch({ type: LOADING });
     API.getCats()
       .then(results => {
+        console.log(results);
         dispatch({
           type: UPDATE_CATS,
           cats: results.data
@@ -33,26 +21,13 @@ function PetList() {
       .catch(err => console.log(err));
   };
 
-  function addFavorite (e, id) {
-    e.preventDefault();
-    console.log(state.currentUser);
-  }
-
-  const adoptCat = () => {
-    console.log("cat adopted!")
-  }
-
   useEffect(() => {
     getCats();
   }, []);
 
   return (
     <div>
-<<<<<<< HEAD:client/src/pages/Portfolio.js
       <Hearder />
-=======
-      <Header/>
->>>>>>> a27d180beafc8563b3348a2803b9c8517a23354e:client/src/pages/PetList.js
       <Navigation />
       <h2>Looking for a home</h2>
       <Container>
@@ -60,7 +35,7 @@ function PetList() {
           <Col size="md-12">
             {state.cats.map(cat => (
               <Card key={cat._id} style={{ width: "100%" }}>
-                <Card.Img className="cardStyle" variant="top" src={"./assets/" + cat.picture} />
+                <Card.Img variant="top" src={"./assets/" + cat.picture} />
                 <Card.Body>
                   <Card.Title>{cat.name}</Card.Title>
                   <Card.Text size="md" >{cat.age}</Card.Text>
@@ -68,8 +43,6 @@ function PetList() {
                     {cat.details}
                 </Card.Text>
                   <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
-                  <Button onClick={(event) => {addFavorite(event, cat._id)}}>Like</Button>
-                  <Button onClick={adoptCat}>Adopt</Button>
                 </Card.Body>
               </Card>
             ))}
@@ -81,4 +54,25 @@ function PetList() {
   )
 }
 
-export default PetList;
+export default Portfolio;
+
+
+{/* <Jumbotron>
+              <h1>Cats On My List</h1>
+            </Jumbotron>
+            {cats.length ? (
+              <List>
+                {cats.map(cat => (
+                  <ListItem key={cat._id}>
+                    <Link to={"/cats/" + cat._id}>
+                      <strong>
+                        {cat.title} by {cat.author}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => deleteCat(cat._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )} */}
