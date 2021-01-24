@@ -18,7 +18,9 @@ const userSchema = new Schema({
     type: String,
     required:true
   },
-  cat: [{ type: Schema.Types.ObjectId, ref: 'Cats' }]
+  favcats: [{ type: Schema.Types.ObjectId, ref: 'Cats' }],
+  addedcats: [{ type: Schema.Types.ObjectId, ref: 'Cats' }],
+
 });
 
 module.exports = mongoose.model("user", userSchema);
