@@ -6,3 +6,7 @@
     font-size: large;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.btn {
+    float:right
+}

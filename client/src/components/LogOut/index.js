@@ -5,6 +5,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 
 
 
+
 function LogOut() {
   const [state, dispatch] = useStoreContext();
 
@@ -22,7 +23,7 @@ function LogOut() {
   }
   if (state.currentUser._id !== 0) {
     return (
-      <Button onClick={handleLogOut} variant="light">Log Out</Button>
+      <Button onClick={handleLogOut} variant="light" className="rightSideBtn">Log Out</Button>
     );
   }
 }
