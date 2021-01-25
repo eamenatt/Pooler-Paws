@@ -21,13 +21,23 @@ function PetList() {
       .catch(err => console.log(err));
   };
 
-  function addFavorite (e, cat) {
+  function addFavorite(e, cat) {
     e.preventDefault();
-    API.addFavorite(state.currentUser._id, cat)
-      .then(results => {
-        console.log("API Response: ", results.data);
-      })
-      .catch(error => console.log(error));
+    if (state.currentUser._id !== 0) {
+      return (API.addFavorite(state.currentUser._id, cat)
+        .then(results => {
+          console.log("API Response: ", results.data);
+        }))
+        .catch(error => console.log(error));
+    } else {
+      return (
+        <div>
+          <Header />
+          <Navigation />
+          <SignIn />
+        </div>
+      )
+    }
   };
 
   const adoptCat = () => {
@@ -40,7 +50,7 @@ function PetList() {
 
   return (
     <div>
-      <Header/>
+      <Header />
       <Navigation />
       <h2>Looking for a home</h2>
       <Container>
@@ -54,9 +64,9 @@ function PetList() {
                   <Card.Text size="md" >{cat.age}</Card.Text>
                   <Card.Text>
                     {cat.details}
-                </Card.Text>
+                  </Card.Text>
                   <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
-                  <Button onClick={(event) => {addFavorite(event, cat)}}>Like</Button>
+                  <Button onClick={(event) => { addFavorite(event, cat) }}>Like</Button>
                   <Button onClick={adoptCat}>Adopt</Button>
                 </Card.Body>
               </Card>
