@@ -4,9 +4,8 @@ import { SET_CURRENT_USER } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
 
 
-// The ...props means, spread all of the passed props onto this element
-// That way we don't have to define them all individually
-function DeleteBtn() {
+
+function LogOut() {
   const [state, dispatch] = useStoreContext();
 
   function handleLogOut() {
@@ -28,4 +27,4 @@ function DeleteBtn() {
   }
 }
 
-export default DeleteBtn;
+export default LogOut;

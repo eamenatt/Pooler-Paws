@@ -5,6 +5,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import API from "../../utils/API";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import SignUpBtn from "../SignUpButton";
 
 function SignIn() {
   const [state, dispatch] = useStoreContext();
@@ -50,6 +51,7 @@ function SignIn() {
         <Button variant="primary" type="submit">
           Submit
       </Button>
+      <SignUpBtn />
       </Form>
     </div>
   );
