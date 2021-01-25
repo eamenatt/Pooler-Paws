@@ -51,9 +51,6 @@ function SignIn() {
           Submit
       </Button>
       </Form>
-      <Button to="/signup" variant="secondary" type="signUp">
-        Sign Up
-      </Button>
     </div>
   );
 }
