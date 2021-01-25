@@ -55,7 +55,7 @@ const reducer = (state, action) => {
     case ADD_FAVORITE:
       return {
         ...state,
-        favorites: [action.cat, ...state.favorites],
+        favorites: action.favorites,
         loading: false
       };
 
@@ -91,7 +91,7 @@ const StoreProvider = ({ value = [], ...props }) => {
       _id: 0,
       username: "",
       email: "",
-      cats: []
+      cat: []
     },
     cats: [],
     currentCat: {

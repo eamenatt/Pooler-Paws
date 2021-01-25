@@ -133,19 +133,28 @@ module.exports = {
       res.status(500).json({ error: err.message });
     }
   },
-  update: async (req, res) => {
+  addFavorite: async (req, res) => {
     try {
-      //console.log(req.params.userId)
-      const updateUser = await db.User.findByIdAndUpdate(req.params.userId);
-      console.log(req.body);
+      console.log("userController", req.body);
+      const updateUserFavorites = await db.User.findByIdAndUpdate(req.params.userId, { $push: { favcats: req.body }});
+      res.json(updateUserFavorites);
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
   },
   findById: function (req, res) {
-    console.log(req.params);
+    console.log("findById", req.params);
     db.User.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).son(err));
+      .catch((err) => res.status(422).json(err));
   },
+  getFavorites: function (req, res) {
+    console.log("getFavorites", req.params.userId);
+    db.User.findById(req.params.userId)
+      .then((dbModel) => {
+        console.log("From Database", dbModel);
+        res.json(dbModel)
+      })
+      .catch((err) => res.status(422).json(err));
+  }
 };

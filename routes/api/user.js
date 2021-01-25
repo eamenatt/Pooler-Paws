@@ -10,8 +10,10 @@ router.route("/login").post(userController.login);
 
 router.route("/validate").post(userController.valid);
 
-router.route("/update/:userId").put(userController.update);
+router.route("/update/:userId").put(userController.addFavorite);
 
 router.route("/delete").delete(auth, userController.delete);
+
+router.route("/favorites/:userId").get(userController.getFavorites);
 
 module.exports = router;

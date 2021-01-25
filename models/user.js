@@ -8,7 +8,6 @@ const userSchema = new Schema({
     unique: true
   },
   email: {
-    //This is the user's email
     type: String,
     unique: true,
     required: true,
@@ -18,7 +17,10 @@ const userSchema = new Schema({
     type: String,
     required:true
   },
-  cat: [{ type: Schema.Types.ObjectId, ref: 'Cats' }]
+  favcats: { 
+    type : Array , 
+    default : [] 
+  }
 });
 
 module.exports = mongoose.model("user", userSchema);
