@@ -10,14 +10,14 @@ router.route("/login").post(userController.login);
 
 router.route("/validate").post(userController.valid);
 
-router.route("/update/:userId").put(userController.addFavorite);
+router.route("/update/favorites/:userId").put(userController.addFavorite);
 
 router.route("/delete").delete(auth, userController.delete);
 
 router.route("/favorites/:userId").get(userController.getFavorites);
 
-router.route("/update/:userId").put(userController.addCreated);
+router.route("/update/created/:userId").put(userController.addCreated);
 
-router.route("/favorites/:userId").get(userController.getCreated);
+router.route("/created/:userId").get(userController.getCreated);
 
 module.exports = router;

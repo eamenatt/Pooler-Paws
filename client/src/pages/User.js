@@ -10,31 +10,30 @@ import Header from "../components/Header";
 function User() {
   const [state, dispatch] = useStoreContext();
 
-  const getCats = () => {
-    dispatch({ type: LOADING });
-    if(state.currentUser._id) {
-      console.log("Current User ID: ", state.currentUser._id);
-    } else {
-      console.log("User is not logged in.");
+  async function getCats() {
+    try {
+      dispatch({ type: LOADING });
+      if (state.currentUser._id) {
+        console.log("Current User ID: ", state.currentUser._id);
+      } else {
+        console.log("User is not logged in.");
+      }
+      const favorites = await API.getFavorites(state.currentUser._id)
+      console.log("getFavorites API call returns: ", favorites);
+      dispatch({
+        type: ADD_FAVORITE,
+        favorites: favorites.data.favcats
+      });
+      dispatch({ type: LOADING });
+      const created = await API.getCreated(state.currentUser._id)
+      console.log("getCreated API call returns: ", created);
+      dispatch({
+        type: ADD_CREATED,
+        created: created.data.createdcats
+      });
+    } catch (error) {
+      console.log(error);
     }
-    API.getFavorites(state.currentUser._id)
-      .then(results => {
-        dispatch({
-          type: ADD_FAVORITE,
-          favorites: results.data.favcats
-        });
-      })
-      .catch(err => console.log(err));
-
-    API.getCreated(state.currentUser._id)
-      .then(results => {
-        dispatch({
-          type: ADD_CREATED,
-          created: results.data.createdcats
-        });
-      })
-      .catch(err => console.log(err));
-    
   };
 
   useEffect(() => {

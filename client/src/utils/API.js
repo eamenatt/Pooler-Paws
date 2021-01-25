@@ -33,7 +33,7 @@ export default {
     return axios.post("/api/user/login", loginData);
   },
   addFavorite: function (userId, cat) {
-    return axios.put("/api/user/update/" + userId, cat)
+    return axios.put("/api/user/update/favorites/" + userId, cat)
   },
   // Saves a cat to the database
   saveCat: function(catData) {
@@ -43,7 +43,7 @@ export default {
     return axios.get("/api/user/favorites/" + userId);
   },
   addCreated: function (userId, savedCat) {
-    return axios.put("/api/user/update/" + userId, savedCat)
+    return axios.put("/api/user/update/created/" + userId, savedCat)
   },
   getCreated: function(userId) {
     return axios.get("/api/user/created/" + userId);

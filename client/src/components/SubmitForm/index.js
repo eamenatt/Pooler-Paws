@@ -16,55 +16,36 @@ function SubmitForm() {
   async function handleSubmit(event) {
     try {
       event.preventDefault();
+      dispatch({ type: LOADING });
       const savedCat = {
         name: nameRef.current.value,
         age: parseInt(ageRef.current.value),
         details: detailsRef.current.value,
       };
-      await API.saveCat(savedCat)
-        .then(result => {
-          dispatch({
-            type: ADD_CAT,
-            cat: result.data
-          });
-        })
-        .catch(err => console.log(err));
-      await API.addCreated(state.currentUser._id, savedCat)
+      const newCat = await API.saveCat(savedCat)
+      dispatch({
+        type: ADD_CAT,
+        cat: newCat.data
+      })
+      console.log("response from cat creation", newCat.data);
+      await API.addCreated(state.currentUser._id, newCat.data)
 
       nameRef.current.value = "";
       ageRef.current.value = "";
       detailsRef.current.value = "";
-      
     } catch (error) {
       console.log(error);
     }
   }
-  // const handleSubmit = e => {
+
+  // function addCreated(e) {
   //   e.preventDefault();
-  //   dispatch({ type: LOADING });
-  //   API.saveCat({
-  //     name: nameRef.current.value,
-  //     age: parseInt(ageRef.current.value),
-  //     details: detailsRef.current.value,
-  //   })
-  //     .then(result => {
-  //       dispatch({
-  //         type: ADD_CAT,
-  //         cat: result.data
-  //       });
+  //   API.addCreated(state.currentUser._id, createdcats)
+  //     .then(results => {
+  //       console.log("API Response: ", results.data);
   //     })
-  //     .catch(err => console.log(err));
-
-    
-
-  function addCreated(e) {
-    e.preventDefault();
-    API.addCreated(state.currentUser._id, createdcats)
-      .then(results => {
-        console.log("API Response: ", results.data);
-      })
-      .catch(error => console.log(error));
-  };
+  //     .catch(error => console.log(error));
+  // };
 
   return (
     <Form onSubmit={handleSubmit}>
