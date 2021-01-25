@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import { useStoreContext } from "../utils/GlobalState";
 import SignIn from "../components/SignIn";
@@ -7,6 +7,7 @@ import { ADD_FAVORITE, ADD_CREATED, LOADING } from "../utils/actions";
 import API from "../utils/API";
 import "./style.css";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 function User() {
   const [state, dispatch] = useStoreContext();
@@ -42,6 +43,7 @@ function User() {
   }, []);
 
   if (state.currentUser._id !== 0) {
+    console.log(state.favorites);
     return (
       <div>
         <Header />
@@ -50,7 +52,7 @@ function User() {
           <Row>
             <Col className="scrollBox" size="md-12">
               <h2>Favorite Cats</h2>
-              {state.favorites.length ? (
+              {state.favorites.length !== 0 ? (
                 <div>
                   {state.favorites.map(cat => (
                     <Card key={cat._id} style={{ width: "100%" }}>
@@ -68,19 +70,11 @@ function User() {
                 </div>
               ) : (
                   <div>
-                    {state.favorites.map(cat => (
-                      <Card key={cat._id} style={{ width: "100%" }}>
-                        <Card.Img variant="top" src={"./assets/" + cat.picture} />
-                        <Card.Body>
-                          <Card.Title>{cat.name}</Card.Title>
-                          <Card.Text size="md" >{cat.age}</Card.Text>
-                          <Card.Text>
-                            {cat.details}
-                          </Card.Text>
-                          <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
-                        </Card.Body>
-                      </Card>
-                    ))}
+                    <h1>No favorited cats added. To favorite a pet, click the 
+                      "like" button on one of the pet cards on the "Pet List" page.</h1>
+                    <Link to="/petlist">
+                      <Button variant="outline-secondary">Click Here!</Button>
+                    </Link>
                   </div>
                 )
               }
@@ -88,7 +82,7 @@ function User() {
 
             <Col className="scrollBox" size="md-12">
               <h2>Created Cats</h2>
-              {state.created.length ? (
+              {state.created.length !== 0 ? (
                 <div>
                   {state.created.map(createdcats => (
                     <Card key={createdcats._id} style={{ width: "100%" }}>
