@@ -5,17 +5,9 @@ const catSchema = new Schema({
   name: { type: String, required: true },
   age: { type: Number, required: true },
   details: { type: String, required: true },
-  picture: {
-    type: String,
-    get: v => `${global}${v}`
-  },
   availability: { type: Boolean, default: true }
 });
 
 const Cat = mongoose.model("Cat", catSchema);
-
-const doc = new Cat({ name: 'Val', picture: '/123.png' });
-doc.picture; // 'https://s3.amazonaws.com/mybucket/123.png'
-doc.toObject({ getters: false }).picture; // '/123.png'
 
 module.exports = Cat;
