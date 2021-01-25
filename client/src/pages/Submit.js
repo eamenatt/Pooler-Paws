@@ -2,12 +2,15 @@ import React from "react";
 import { Jumbotron } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import SubmitForm from "../components/SubmitForm";
-import SignUp from "../components/SignUp"
+import SignIn from "../components/SignIn";
 import Header from "../components/Header";
+import { useStoreContext } from "../utils/GlobalState";
+
 
 function Submit() {
-  console.log(localStorage.getItem("auth-token"))
-  if (localStorage.getItem("auth-token") !== null) {
+  const [state, dispatch] = useStoreContext();
+
+  if (state.currentUser._id !== 0) {
     return (
       <div>
         <div>
@@ -22,10 +25,11 @@ function Submit() {
     )
   } else {
     return (
-    <div>
-      <Header />
-      <SignUp />
-    </div>
+      <div>
+        <Header />
+        <Navigation />
+        <SignIn />
+      </div>
     )
   }
 
