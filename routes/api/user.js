@@ -16,4 +16,8 @@ router.route("/delete").delete(auth, userController.delete);
 
 router.route("/favorites/:userId").get(userController.getFavorites);
 
+router.route("/update/:userId").put(userController.addCreated);
+
+router.route("/favorites/:userId").get(userController.getCreated);
+
 module.exports = router;

@@ -8,7 +8,9 @@ import {
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
   LOADING,
-  SET_CURRENT_USER
+  SET_CURRENT_USER,
+  ADD_CREATED,
+  UPDATE_CREATED
 } from "./actions";
 
 const StoreContext = createContext();
@@ -74,6 +76,20 @@ const reducer = (state, action) => {
         })
       };
 
+    case ADD_CREATED:
+      return {
+        ...state,
+        created: action.created,
+        loading: false
+      };
+
+     case UPDATE_CREATED:
+      return {
+        ...state,
+        created: [...state.created],
+        loading: false
+      };
+
     case LOADING:
       return {
         ...state,
@@ -91,7 +107,8 @@ const StoreProvider = ({ value = [], ...props }) => {
       _id: 0,
       username: "",
       email: "",
-      cat: []
+      favcats: [],
+      createdcats: []
     },
     cats: [],
     currentCat: {
@@ -103,6 +120,7 @@ const StoreProvider = ({ value = [], ...props }) => {
       availability: true
     },
     favorites: [],
+    created: [],
     loading: false
   });
 
