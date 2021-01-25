@@ -6,6 +6,8 @@ export const ADD_CAT = "ADD_CAT";
 export const ADD_FAVORITE = "ADD_FAVORITE";
 export const REMOVE_FAVORITE = "REMOVE_FAVORITE";
 export const UPDATE_FAVORITES = "UPDATE_FAVORITES";
+export const ADD_CREATED = "ADD_CREATED";
+export const UPDATE_CREATED = "UPDATE_CREATED";
 
 //Loading
 export const LOADING = "LOADING";

@@ -2,15 +2,15 @@ import axios from "axios";
 
 export default {
 
-  // Gets all books
+  // Gets all cats
   getCats: function() {
     return axios.get("/api/cats");
   },
-  // Gets the book with the given id
+  // Gets the cat with the given id
   getCat: function(id) {
     return axios.get("/api/cats/" + id);
   },
-  // Deletes the book with the given id
+  // Deletes the cat with the given id
   deleteCat: function(id) {
     return axios.delete("/api/cats/" + id);
   },
@@ -35,11 +35,17 @@ export default {
   addFavorite: function (userId, cat) {
     return axios.put("/api/user/update/" + userId, cat)
   },
-  // Saves a book to the database
+  // Saves a cat to the database
   saveCat: function(catData) {
     return axios.post("/api/cats", catData);
   },
   getFavorites: function(userId) {
     return axios.get("/api/user/favorites/" + userId);
-  }
+  },
+  addCreated: function (userId, savedCat) {
+    return axios.put("/api/user/update/" + userId, savedCat)
+  },
+  getCreated: function(userId) {
+    return axios.get("/api/user/created/" + userId);
+  },
 };
