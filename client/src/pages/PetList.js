@@ -21,10 +21,14 @@ function PetList() {
       .catch(err => console.log(err));
   };
 
-  function addFavorite (e, id) {
+  function addFavorite (e, cat) {
     e.preventDefault();
-    console.log(state.currentUser);
-  }
+    API.addFavorite(state.currentUser._id, cat)
+      .then(results => {
+        console.log("API Response: ", results.data);
+      })
+      .catch(error => console.log(error));
+  };
 
   const adoptCat = () => {
     console.log("cat adopted!")
@@ -52,7 +56,7 @@ function PetList() {
                     {cat.details}
                 </Card.Text>
                   <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
-                  <Button onClick={(event) => {addFavorite(event, cat._id)}}>Like</Button>
+                  <Button onClick={(event) => {addFavorite(event, cat)}}>Like</Button>
                   <Button onClick={adoptCat}>Adopt</Button>
                 </Card.Body>
               </Card>

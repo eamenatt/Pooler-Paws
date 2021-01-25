@@ -32,12 +32,14 @@ export default {
   loginUser: function (loginData) {
     return axios.post("/api/user/login", loginData);
   },
-  updateUser: function (userId, id) {
-    return axios.put("/api/user/update/" + userId, id)
+  addFavorite: function (userId, cat) {
+    return axios.put("/api/user/update/" + userId, cat)
   },
   // Saves a book to the database
   saveCat: function(catData) {
-    console.log(catData);
     return axios.post("/api/cats", catData);
+  },
+  getFavorites: function(userId) {
+    return axios.get("/api/user/favorites/" + userId);
   }
 };

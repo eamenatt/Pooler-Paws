@@ -4,11 +4,10 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   username: {
     type: String,
-    required:true,
+    required: true,
     unique: true
   },
   email: {
-    //This is the user's email
     type: String,
     unique: true,
     required: true,
@@ -16,11 +15,16 @@ const userSchema = new Schema({
   },
   password: {
     type: String,
-    required:true
+    required: true
   },
-  favcats: [{ type: Schema.Types.ObjectId, ref: 'Cats' }],
-  addedcats: [{ type: Schema.Types.ObjectId, ref: 'Cats' }],
-
+  favcats: {
+    type: Array,
+    default: []
+  },
+  addedcats: {
+    type: Array,
+    default: []
+  }
 });
 
 module.exports = mongoose.model("user", userSchema);
