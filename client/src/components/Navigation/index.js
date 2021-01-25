@@ -2,8 +2,12 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import "./style.css";
 import { NavLink } from "react-router-dom";
+import { useStoreContext } from "../../utils/GlobalState";
+import LogOut from "../LogOut"
 
 function Navigation() {
+  const [state, dispatch] = useStoreContext();
+
   if (state.currentUser._id !== 0) {
     return (
       <Nav
@@ -25,6 +29,7 @@ function Navigation() {
           <Nav.Item as="li">
             <Nav.Link as={NavLink} className="navBar" to="/user">User Page</Nav.Link>
           </Nav.Item>
+          <LogOut />
         </Nav>
       </Nav>
     );
