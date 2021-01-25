@@ -14,7 +14,7 @@ function SignIn() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    dispatch({type: LOADING});
+    dispatch({ type: LOADING });
     API.loginUser({
       username: usernameRef.current.value,
       password: passwordRef.current.value,
@@ -33,24 +33,25 @@ function SignIn() {
   };
 
   return (
-    <Form onSubmit={e => { handleFormSubmit(e) }}>
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>Username</Form.Label>
-        <Form.Control required ref={usernameRef} placeholder="Enter username" />
-        {/* <Form.Text className="text-muted">
+    <div>
+      <Form onSubmit={e => { handleFormSubmit(e) }}>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Username</Form.Label>
+          <Form.Control required ref={usernameRef} placeholder="Enter username" />
+          {/* <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text> */}
-      </Form.Group>
+        </Form.Group>
 
-      <Form.Group controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control required ref={passwordRef} type="password" placeholder="Password" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control required ref={passwordRef} type="password" placeholder="Password" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
       </Button>
-    </Form>
-
+      </Form>
+    </div>
   );
 }
 
