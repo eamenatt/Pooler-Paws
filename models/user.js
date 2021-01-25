@@ -21,7 +21,7 @@ const userSchema = new Schema({
     type: Array,
     default: []
   },
-  addedcats: {
+  createdcats: {
     type: Array,
     default: []
   }

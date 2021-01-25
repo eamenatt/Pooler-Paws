@@ -142,6 +142,15 @@ module.exports = {
       res.status(500).json({ error: err.message });
     }
   },
+  addCreated: async (req, res) => {
+    try {
+      console.log("userController", req.body);
+      const updateUserCreated = await db.User.findByIdAndUpdate(req.params.userId, { $push: { createdcats: req.body }});
+      res.json(updateUserCreated);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
   findById: function (req, res) {
     console.log("findById", req.params);
     db.User.findById(req.params.id)
@@ -150,6 +159,15 @@ module.exports = {
   },
   getFavorites: function (req, res) {
     console.log("getFavorites", req.params.userId);
+    db.User.findById(req.params.userId)
+      .then((dbModel) => {
+        console.log("From Database", dbModel);
+        res.json(dbModel)
+      })
+      .catch((err) => res.status(422).json(err));
+  },
+  getCreated: function (req, res) {
+    console.log("getCreated", req.params.userId);
     db.User.findById(req.params.userId)
       .then((dbModel) => {
         console.log("From Database", dbModel);
