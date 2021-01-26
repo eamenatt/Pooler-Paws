@@ -3,12 +3,9 @@ import { Container, Col, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Slides from "../components/Slides";
 import Header from "../components/Header";
-import Jumbotron from 'react-bootstrap/jumbotron';
+import Jumbotron from '../components/Jumbotron';
 import Button from 'react-bootstrap/button';
 import {Link} from "react-router-dom";
-  
-
-
 import "./style.css";
 
 
