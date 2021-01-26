@@ -12,14 +12,26 @@ export default {
   },
   // Deletes the cat with the given id
   deleteCat: function(id) {
-    return axios.delete("/api/cats/" + id);
+    return axios.delete("/api/cats/" + id, {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token")
+      }
+    });
   },
   getuser: function (username) {
-    return axios.get("/api/user/" + username);
+    return axios.get("/api/user/" + username, {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token")
+      }
+    });
   },
   // Deletes the user with the given id
   deleteuser: function (id) {
-    return axios.delete("/api/user/" + id);
+    return axios.delete("/api/user/" + id, {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token")
+      }
+    });
   },
   validateUser: function (token) {
     return axios.post("/api/user/validate", { token })
@@ -33,11 +45,19 @@ export default {
     return axios.post("/api/user/login", loginData);
   },
   addFavorite: function (userId, cat) {
-    return axios.put("/api/user/update/favorites/" + userId, cat)
+    return axios.put("/api/user/update/favorites/" + userId, cat, {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token")
+      }
+    })
   },
   // Saves a cat to the database
   saveCat: function(catData) {
-    return axios.post("/api/cats", catData);
+    return axios.post("/api/cats", catData, {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token")
+      }
+    });
   },
   getFavorites: function(userId) {
     return axios.get("/api/user/favorites/" + userId, {
@@ -47,9 +67,17 @@ export default {
     });
   },
   addCreated: function (userId, savedCat) {
-    return axios.put("/api/user/update/created/" + userId, savedCat)
+    return axios.put("/api/user/update/created/" + userId, savedCat, {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token")
+      }
+    })
   },
   getCreated: function(userId) {
-    return axios.get("/api/user/created/" + userId);
+    return axios.get("/api/user/created/" + userId, {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token")
+      }
+    });
   },
 };

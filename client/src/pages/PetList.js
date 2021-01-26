@@ -4,11 +4,15 @@ import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_CATS, LOADING } from "../utils/actions";
+import { useHistory } from "react-router-dom";
+
 import API from "../utils/API";
 import "./style.css";
 
 function PetList() {
   const [state, dispatch] = useStoreContext();
+  const history = useHistory();
+
   const getCats = () => {
     dispatch({ type: LOADING });
     API.getCats()
@@ -30,13 +34,7 @@ function PetList() {
         }))
         .catch(error => console.log(error));
     } else {
-      return (
-        <div>
-          <Header />
-          <Navigation />
-          <SignIn />
-        </div>
-      )
+      return (history.push("/signin"));
     }
   };
 

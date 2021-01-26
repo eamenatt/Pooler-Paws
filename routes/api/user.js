@@ -18,8 +18,8 @@ router.route("/delete").delete(auth, userController.delete);
 
 router.route("/favorites/:userId").get(auth, userController.getFavorites);
 
-router.route("/update/created/:userId").put(userController.addCreated);
+router.route("/update/created/:userId").put(auth, userController.addCreated);
 
-router.route("/created/:userId").get(userController.getCreated);
+router.route("/created/:userId").get(auth, userController.getCreated);
 
 module.exports = router;
