@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
 import { SET_CURRENT_USER } from "../../utils/actions";
@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 
 function SignUp() {
   const [state, dispatch] = useStoreContext();
+  const [user, setUser] = useState();
   const emailRef = useRef();
   const usernameRef = useRef();
   const passwordRef = useRef();
@@ -30,6 +31,10 @@ function SignUp() {
       dispatch({
         type: SET_CURRENT_USER,
         user: data.user
+      });
+      setUser({
+        token: data.token,
+        user: data.user,
       });
       localStorage.setItem("auth-token", data.token);
       history.push("/");

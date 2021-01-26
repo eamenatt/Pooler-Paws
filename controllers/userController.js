@@ -94,7 +94,6 @@ module.exports = {
 
       const {password, ...userData} = user;
       // delete user.password;
-      console.log(Math.floor(Date.now() / 1000) + 60 * 60);
       res.json({
         token,
         user: userData
