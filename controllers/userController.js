@@ -86,7 +86,7 @@ module.exports = {
 
       const token = jwt.sign(
         {
-          exp: Math.floor(Date.now() / 1000) + 60 * 60,
+          exp: Math.floor(Date.now() / 1000) + (60 * 60),
           _id: user._id,
         },
         "secret"
@@ -94,7 +94,7 @@ module.exports = {
 
       const {password, ...userData} = user;
       // delete user.password;
-      console.log(userData);
+      console.log(Math.floor(Date.now() / 1000) + 60 * 60);
       res.json({
         token,
         user: userData
