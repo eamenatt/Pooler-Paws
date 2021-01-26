@@ -40,7 +40,11 @@ export default {
     return axios.post("/api/cats", catData);
   },
   getFavorites: function(userId) {
-    return axios.get("/api/user/favorites/" + userId);
+    return axios.get("/api/user/favorites/" + userId, {
+      headers: {
+        "x-auth-token": localStorage.getItem("auth-token")
+      }
+    });
   },
   addCreated: function (userId, savedCat) {
     return axios.put("/api/user/update/created/" + userId, savedCat)
