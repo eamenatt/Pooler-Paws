@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import Row  from "react-bootstrap/Row";
 import Navigation from "../components/Navigation";
 import Slides from "../components/Slides";
 import Header from "../components/Header";
 import Jumbotron from '../components/Jumbotron';
-import Button from 'react-bootstrap/button';
+import Button from 'react-bootstrap/Button';
 import {Link} from "react-router-dom";
 import "./style.css";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Jumbotron } from "react-bootstrap";
+import  Jumbotron from "react-bootstrap/Jumbotron";
 import Navigation from "../components/Navigation";
 import SubmitForm from "../components/SubmitForm";
 import SignIn from "../components/SignIn";
