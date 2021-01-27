@@ -8,6 +8,9 @@ module.exports = {
     res.json({
       _id: user._id,
       username: user.username,
+      email: user.email,
+      favcats: user.favcats,
+      createdcats: user.createdcats
     });
   },
   register: async (req, res) => {
