@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import { StoreProvider, useStoreContext } from "./utils/GlobalState";
 import User from "./pages/User";
 import axios from "axios";
+import { UserContext } from "./context/userContext";
 // import { SET_CURRENT_USER } from "./utils/actions";
 
 function App() {
@@ -54,9 +55,10 @@ function App() {
 
   return (
     <Router>
-        <div>
-          {console.log(user.user)}
-          <StoreProvider currentUser={user.user}>
+      <UserContext.Provider value={{ user, setUser }}>
+
+      <div>
+          <StoreProvider>
             <Switch>
               <Route exact path="/contact">
                 <Contact />
@@ -84,7 +86,10 @@ function App() {
               </Route>
             </Switch>
           </StoreProvider>
+
         </div>
+        <UserContext.Provider />
+
     </Router>
   )
 }
