@@ -11,39 +11,11 @@ import Home from "./pages/Home";
 import { StoreProvider } from "./utils/GlobalState";
 import User from "./pages/User";
 
+
 function App() {
-
-  // useEffect(() => {
-  //   const checkLoggedIn = async () => {
-  //     let token = localStorage.getItem("auth-token");
-  //     if (token === null) {
-  //       localStorage.setItem("auth-token", "");
-  //       token = "";
-  //     }
-  //     const tokenRes = await axios.post(
-  //       "/api/user/validate",
-  //       null,
-  //       { headers: { "token": token } }
-  //     );
-  //     // console.log(tokenRes.data);
-  //     if (tokenRes.data) {
-  //       const userRes = await axios.get(
-  //         "/api/user",
-  //         { headers: { "token": token } }
-  //       );
-  //       setUser({
-  //         token,
-  //         user: userRes.data,
-  //       });
-  //     }
-  //   };
-
-  //   // checkLoggedIn();
-  // }, []);
-
   return (
     <Router>
-        <div>
+      <div>
           <StoreProvider>
             <Switch>
               <Route exact path="/contact">
@@ -72,6 +44,7 @@ function App() {
               </Route>
             </Switch>
           </StoreProvider>
+
         </div>
     </Router>
   )

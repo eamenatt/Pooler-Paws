@@ -1,27 +1,65 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import { useStoreContext } from "../utils/GlobalState";
 import SignIn from "../components/SignIn";
-import { ADD_FAVORITE, ADD_CREATED, LOADING } from "../utils/actions";
+import { ADD_FAVORITE, ADD_CREATED, SET_CURRENT_USER, LOADING } from "../utils/actions";
 import API from "../utils/API";
 import "./style.css";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function User() {
   const [state, dispatch] = useStoreContext();
+  const [user, setUser] = useState();
+  const history = useHistory();
+  
+  useEffect(() => {
+    checkLoggedIn();
+  }, []);
 
-  async function getCats() {
+  const checkLoggedIn = async () => {
+    let token = localStorage.getItem("auth-token");
+    if (token === null) {
+      localStorage.setItem("auth-token", "");
+      token = "";
+    }
+    const tokenRes = await axios.post(
+      "/api/user/validate",
+      null,
+      { headers: { "x-auth-token": token } }
+    );
+    console.log(tokenRes.data);
+    if (tokenRes.data) {
+      const userRes = await axios.get(
+        "/api/user",
+        { headers: { "x-auth-token": token } }
+      );
+      dispatch({
+        type: SET_CURRENT_USER,
+        user: userRes.data
+      });
+      setUser({
+        token,
+        user: userRes.data,
+      });
+      getCats(userRes.data._id);
+
+    }
+  };
+  async function getCats(id) {
+    const userId = id || state.currentUser._id;
     try {
       dispatch({ type: LOADING });
-      const favorites = await API.getFavorites(state.currentUser._id)
+       const favorites = await API.getFavorites(userId)
       dispatch({
         type: ADD_FAVORITE,
         favorites: favorites.data.favcats
       });
       dispatch({ type: LOADING });
-      const created = await API.getCreated(state.currentUser._id)
+      const created = await API.getCreated(userId)
       dispatch({
         type: ADD_CREATED,
         created: created.data.createdcats
@@ -31,9 +69,7 @@ function User() {
     }
   };
 
-  useEffect(() => {
-    getCats();
-  }, []);
+
 
   if (state.currentUser._id !== 0) {
     return (
@@ -62,7 +98,7 @@ function User() {
                 </div>
               ) : (
                   <div>
-                    <h1>No favorited cats added. To favorite a pet, click the 
+                    <h1>No favorited cats added. To favorite a pet, click the
                       "like" button on one of the pet cards on the "Pet List" page.</h1>
                     <Link to="/petlist">
                       <Button variant="outline-secondary">Click Here!</Button>
