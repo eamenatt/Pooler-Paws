@@ -3,12 +3,13 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import { useStoreContext } from "../utils/GlobalState";
-import { UPDATE_CATS, LOADING } from "../utils/actions";
+import { UPDATE_CATS, LOADING, ADD_FAVORITE } from "../utils/actions";
 import API from "../utils/API";
 import "./style.css";
 
 function PetList() {
   const [state, dispatch] = useStoreContext();
+
   const getCats = () => {
     dispatch({ type: LOADING });
     API.getCats()
@@ -21,28 +22,22 @@ function PetList() {
       .catch(err => console.log(err));
   };
 
-  function addFavorite(e, cat) {
+  async function addFavorite(e, cat) {
     e.preventDefault();
-    if (state.currentUser._id !== 0) {
-      return (API.addFavorite(state.currentUser._id, cat)
-        .then(results => {
-          console.log("API Response: ", results.data);
-        }))
-        .catch(error => console.log(error));
+    const match = state.favorites.filter(favorite => favorite._id === cat._id).length;
+    if (match) {
+      alert("You have already liked this cat!");
     } else {
-      return (
-        <div>
-          <Header />
-          <Navigation />
-          <SignIn />
-        </div>
-      )
+      alert("Cat Succesfully Liked!");
+      await API.addFavorite(state.currentUser._id, cat)
+      dispatch({ type: LOADING });
+      const favorites = await API.getFavorites(state.currentUser._id);
+      dispatch({
+        type: ADD_FAVORITE,
+        favorites: favorites.data.favcats
+      });
     }
   };
-
-  const adoptCat = () => {
-    console.log("cat adopted!")
-  }
 
   useEffect(() => {
     getCats();
@@ -66,8 +61,10 @@ function PetList() {
                     {cat.details}
                   </Card.Text>
                   <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
-                  <Button onClick={(event) => { addFavorite(event, cat) }}>Like</Button>
-                  <Button onClick={adoptCat}>Adopt</Button>
+                  {state.currentUser._id !== 0 ?
+                    <div>
+                      <Button onClick={(event) => { addFavorite(event, cat) }}>Like</Button>
+                    </div> : null}
                 </Card.Body>
               </Card>
             ))}

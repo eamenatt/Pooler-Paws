@@ -15,20 +15,13 @@ function User() {
   async function getCats() {
     try {
       dispatch({ type: LOADING });
-      if (state.currentUser._id) {
-        console.log("Current User ID: ", state.currentUser._id);
-      } else {
-        console.log("User is not logged in.");
-      }
       const favorites = await API.getFavorites(state.currentUser._id)
-      console.log("getFavorites API call returns: ", favorites);
       dispatch({
         type: ADD_FAVORITE,
         favorites: favorites.data.favcats
       });
       dispatch({ type: LOADING });
       const created = await API.getCreated(state.currentUser._id)
-      console.log("getCreated API call returns: ", created);
       dispatch({
         type: ADD_CREATED,
         created: created.data.createdcats
@@ -43,7 +36,6 @@ function User() {
   }, []);
 
   if (state.currentUser._id !== 0) {
-    console.log(state.favorites);
     return (
       <div>
         <Header />
@@ -79,7 +71,6 @@ function User() {
                 )
               }
             </Col>
-
             <Col className="scrollBox" size="md-12">
               <h2>Created Cats</h2>
               {state.created.length !== 0 ? (
