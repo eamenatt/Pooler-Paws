@@ -77,7 +77,6 @@ const reducer = (state, action) => {
       };
 
     case ADD_CREATED:
-      console.log("ADD_CREATED", action.created);
       return {
         ...state,
         created: action.created,

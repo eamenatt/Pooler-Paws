@@ -15,10 +15,11 @@ function User() {
   const [state, dispatch] = useStoreContext();
   const [user, setUser] = useState();
   const history = useHistory();
+  
   useEffect(() => {
     checkLoggedIn();
-
   }, []);
+
   const checkLoggedIn = async () => {
     let token = localStorage.getItem("auth-token");
     if (token === null) {
@@ -53,14 +54,12 @@ function User() {
     try {
       dispatch({ type: LOADING });
        const favorites = await API.getFavorites(userId)
-      console.log("getFavorites API call returns: ", favorites);
       dispatch({
         type: ADD_FAVORITE,
         favorites: favorites.data.favcats
       });
       dispatch({ type: LOADING });
       const created = await API.getCreated(userId)
-      console.log("getCreated API call returns: ", created);
       dispatch({
         type: ADD_CREATED,
         created: created.data.createdcats
@@ -73,7 +72,6 @@ function User() {
 
 
   if (state.currentUser._id !== 0) {
-    console.log(state.favorites);
     return (
       <div>
         <Header />
@@ -109,7 +107,6 @@ function User() {
                 )
               }
             </Col>
-
             <Col className="scrollBox" size="md-12">
               <h2>Created Cats</h2>
               {state.created.length !== 0 ? (
