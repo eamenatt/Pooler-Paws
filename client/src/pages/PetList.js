@@ -92,7 +92,7 @@ function PetList() {
                 <Card.Img className="cardStyle" variant="top" src={"./assets/" + cat.picture} />
                 <Card.Body>
                   <Card.Title>{cat.name}</Card.Title>
-                  <Card.Text size="md" >{cat.age}</Card.Text>
+                  <Card.Text size="md" >Age: {cat.age}</Card.Text>
                   <Card.Text>
                     {cat.details}
                   </Card.Text>

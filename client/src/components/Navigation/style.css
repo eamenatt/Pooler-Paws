@@ -10,3 +10,8 @@
 .btn {
     float:right
 }
+
+.orange {
+    background-color: rgb(241, 165, 66);
+    opacity: 90%;
+}
