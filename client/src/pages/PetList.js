@@ -1,14 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import { useStoreContext } from "../utils/GlobalState";
-import { UPDATE_CATS, LOADING } from "../utils/actions";
+import { UPDATE_CATS, SET_CURRENT_USER, LOADING } from "../utils/actions";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+
 import API from "../utils/API";
 import "./style.css";
 
 function PetList() {
   const [state, dispatch] = useStoreContext();
+  const history = useHistory();
+  const [user, setUser] = useState();
+
   const getCats = () => {
     dispatch({ type: LOADING });
     API.getCats()
@@ -30,13 +36,7 @@ function PetList() {
         }))
         .catch(error => console.log(error));
     } else {
-      return (
-        <div>
-          <Header />
-          <Navigation />
-          <SignIn />
-        </div>
-      )
+      return (history.push("/signin"));
     }
   };
 
@@ -45,7 +45,38 @@ function PetList() {
   }
 
   useEffect(() => {
-    getCats();
+    const checkLoggedIn = async () => {
+      let token = localStorage.getItem("auth-token");
+      if (token === null) {
+        localStorage.setItem("auth-token", "");
+        token = "";
+      }
+      const tokenRes = await axios.post(
+        "/api/user/validate",
+        null,
+        { headers: { "x-auth-token": token } }
+      );
+      console.log(tokenRes.data);
+      if (tokenRes.data) {
+        const userRes = await axios.get(
+          "/api/user",
+          { headers: { "x-auth-token": token } }
+        );
+        dispatch({
+          type: SET_CURRENT_USER,
+          user: userRes.data
+        });
+        setUser({
+          token,
+          user: userRes.data,
+        });
+        getCats(userRes.data._id);
+
+      }
+    };
+
+    checkLoggedIn();
+
   }, []);
 
   return (

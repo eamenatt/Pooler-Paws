@@ -3,9 +3,6 @@ import Button from "react-bootstrap/Button";
 import { SET_CURRENT_USER } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
 
-
-
-
 function LogOut() {
   const [state, dispatch] = useStoreContext();
 
@@ -20,6 +17,7 @@ function LogOut() {
         createdcats: []
       }
     });
+    localStorage.removeItem("auth-token");
   }
   if (state.currentUser._id !== 0) {
     return (

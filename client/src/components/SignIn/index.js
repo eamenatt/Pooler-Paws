@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { SET_CURRENT_USER, LOADING } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
@@ -9,6 +9,7 @@ import SignUpBtn from "../SignUpButton";
 
 function SignIn() {
   const [state, dispatch] = useStoreContext();
+  const [user, setUser] = useStoreContext();
   const usernameRef = useRef();
   const passwordRef = useRef();
   const history = useHistory();
@@ -24,6 +25,10 @@ function SignIn() {
         dispatch({
           type: SET_CURRENT_USER,
           user: res.data.user
+        });
+        setUser({
+          token: res.data.token,
+          user: res.data.user,
         });
         localStorage.setItem("auth-token", res.data.token);
         history.push("/");

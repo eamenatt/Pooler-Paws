@@ -8,6 +8,9 @@ module.exports = {
     res.json({
       _id: user._id,
       username: user.username,
+      email: user.email,
+      favcats: user.favcats,
+      createdcats: user.createdcats
     });
   },
   register: async (req, res) => {
@@ -86,7 +89,7 @@ module.exports = {
 
       const token = jwt.sign(
         {
-          exp: Math.floor(Date.now() / 1000) + 60 * 60,
+          exp: Math.floor(Date.now() / 1000) + (60 * 60),
           _id: user._id,
         },
         "secret"
@@ -94,7 +97,6 @@ module.exports = {
 
       const {password, ...userData} = user;
       // delete user.password;
-      console.log(userData);
       res.json({
         token,
         user: userData
@@ -115,7 +117,7 @@ module.exports = {
         return res.json(false);
       }
 
-      const user = await db.User.findById(verified.id);
+      const user = await db.User.findById(verified._id);
       if (!user) {
         return res.json(false);
       }
