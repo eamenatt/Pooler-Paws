@@ -15,57 +15,51 @@ function User() {
   const [state, dispatch] = useStoreContext();
   const [user, setUser] = useState();
   const history = useHistory();
-
   useEffect(() => {
-    const checkLoggedIn = async () => {
-      let token = localStorage.getItem("auth-token");
-      if (token === null) {
-        localStorage.setItem("auth-token", "");
-        token = "";
-      }
-      const tokenRes = await axios.post(
-        "/api/user/validate",
-        null,
+    checkLoggedIn();
+
+  }, []);
+  const checkLoggedIn = async () => {
+    let token = localStorage.getItem("auth-token");
+    if (token === null) {
+      localStorage.setItem("auth-token", "");
+      token = "";
+    }
+    const tokenRes = await axios.post(
+      "/api/user/validate",
+      null,
+      { headers: { "x-auth-token": token } }
+    );
+    console.log(tokenRes.data);
+    if (tokenRes.data) {
+      const userRes = await axios.get(
+        "/api/user",
         { headers: { "x-auth-token": token } }
       );
-      console.log(tokenRes.data);
-      if (tokenRes.data) {
-        const userRes = await axios.get(
-          "/api/user",
-          { headers: { "x-auth-token": token } }
-        );
-        dispatch({
-          type: SET_CURRENT_USER,
-          user: userRes.data
-        });
-        setUser({
-          token,
-          user: userRes.data,
-        });
-      } else {
-        return (history.push("/signin"));
-      }
-    };
+      dispatch({
+        type: SET_CURRENT_USER,
+        user: userRes.data
+      });
+      setUser({
+        token,
+        user: userRes.data,
+      });
+      getCats(userRes.data._id);
 
-    checkLoggedIn();
-  }, []);
-
-  async function getCats() {
+    }
+  };
+  async function getCats(id) {
+    const userId = id || state.currentUser._id;
     try {
       dispatch({ type: LOADING });
-      if (state.currentUser._id) {
-        console.log("Current User ID: ", state.currentUser._id);
-      } else {
-        console.log("User is not logged in.");
-      }
-      const favorites = await API.getFavorites(state.currentUser._id)
+       const favorites = await API.getFavorites(userId)
       console.log("getFavorites API call returns: ", favorites);
       dispatch({
         type: ADD_FAVORITE,
         favorites: favorites.data.favcats
       });
       dispatch({ type: LOADING });
-      const created = await API.getCreated(state.currentUser._id)
+      const created = await API.getCreated(userId)
       console.log("getCreated API call returns: ", created);
       dispatch({
         type: ADD_CREATED,
@@ -76,9 +70,7 @@ function User() {
     }
   };
 
-  useEffect(() => {
-    getCats();
-  }, []);
+
 
   if (state.currentUser._id !== 0) {
     console.log(state.favorites);

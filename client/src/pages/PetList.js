@@ -70,11 +70,12 @@ function PetList() {
           token,
           user: userRes.data,
         });
+        getCats(userRes.data._id);
+
       }
     };
 
     checkLoggedIn();
-    getCats();
 
   }, []);
 

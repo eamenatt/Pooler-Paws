@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Navigation from "../components/Navigation";
 import SubmitForm from "../components/SubmitForm";
+import SignIn from "../components/SignIn"
 import Header from "../components/Header";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -12,7 +13,6 @@ import { SET_CURRENT_USER } from "../utils/actions";
 function Submit() {
   const [state, dispatch] = useStoreContext();
   const [user, setUser] = useState();
-  const history = useHistory();
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -40,8 +40,6 @@ function Submit() {
           token,
           user: userRes.data,
         });
-      } else {
-        return (history.push("/signin"));
       }
     };
 
