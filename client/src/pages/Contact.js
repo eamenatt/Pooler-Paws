@@ -6,6 +6,7 @@ import "./style.css";
 import axios from "axios";
 import { useStoreContext } from "../utils/GlobalState";
 import { SET_CURRENT_USER } from "../utils/actions";
+import Jumbotron from "../components/Jumbotron";
 
 
 function Contact() {
@@ -48,6 +49,17 @@ function Contact() {
         <Header />
         <Navigation />
         <br></br>
+        <Jumbotron>
+            <h3>Contact Pooler Paws!</h3>
+            <p>
+                Thank you for your visiting our site and wanting to reach out. If you are interested in adopting a pet please submit a contact form below and we will get back to you soon! 
+            </p>
+           <ul>
+               <li>Email: Admin@PoolerPaws.com</li>
+               <li>Area Served: Pooler, GA and the surrounding area within 20 miles</li>
+               <li>Group Admin: Karen Menatti</li>
+           </ul>
+        </Jumbotron>
         <ContactForm />
       </div>
     );

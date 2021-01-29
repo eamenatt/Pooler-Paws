@@ -75,10 +75,7 @@ font-family: 'Times New Roman', Times, serif;
   color: #960303;
 }
 
-/* .contactUsForm {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  background-color: orange;
-} */
+li {
+  list-style: none;
+  text-align:center;
+}
