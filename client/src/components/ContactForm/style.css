@@ -1,0 +1,10 @@
+.contact-form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: orange;
+    opacity: .97;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    border-radius: 25px;
+}

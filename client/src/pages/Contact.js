@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
-import StaticContact from "../components/StaticContact";
+import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import "./style.css";
 import axios from "axios";
@@ -44,16 +44,13 @@ function Contact() {
     checkLoggedIn();
   }, []);
     return (
-
-    
-            <div className="background">
-                <Header />
-                <Navigation />
-                <br></br>
-                <StaticContact />
-            </div>
-            
-    )
-}
-
-export default Contact;
+      <div>
+        <Header />
+        <Navigation />
+        <br></br>
+        <ContactForm />
+      </div>
+    );
+  }
+  
+  export default Contact;

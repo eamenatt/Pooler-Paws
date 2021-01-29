@@ -80,4 +80,7 @@ export default {
       }
     });
   },
+  send: function(res) {
+    return axios.post("/api/send");
+  },
 };
