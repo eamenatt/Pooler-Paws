@@ -27,9 +27,10 @@ class Contact extends Component {
       message: this.state.message
     }
 
-    axios.post('send', data)
+    axios.post('/API/send', data)
       .then(res => {
         this.setState({ sent: true }, this.resetForm())
+        console.log(data)
       })
       .catch(() => {
         console.log(data)
@@ -82,6 +83,7 @@ class Contact extends Component {
               rows="3"
               placeholder="Enter your message"
               onChange={e => this.setState({ message: e.target.value })}
+              required
             />
           </Form.Group>
           <Button type="submit" className="button button-primary">

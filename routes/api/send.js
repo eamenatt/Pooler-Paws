@@ -7,7 +7,7 @@ dotenv.config();
 
 
 // Matches with "/api/send"
-router.post('/api', (req, res) => {
+router.post('/', (req, res) => {
     var data = req.body;
 
     var transporter = nodemailer.createTransport({
@@ -22,9 +22,9 @@ router.post('/api', (req, res) => {
         from: data.email,
         to: 'admin@poolerpaws.com',
         subject: 'Contact Form',
-        html: `<p>${data.name}</p>
-            <p>${data.email}</p>
-            <p>${data.message}</p>`
+        html: `<p>From: ${data.name}</p>
+            <p>Reply Email: ${data.email}</p>
+            <p>Message: ${data.message}</p>`
     };
 
     transporter.sendMail(mailOptions,
