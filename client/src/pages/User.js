@@ -78,20 +78,20 @@ function User() {
         <Navigation />
         <Container>
           <Row>
-            <Col className="scrollBox" size="md-12">
-              <h2>Favorite Cats</h2>
+            <Col size="md-12">
+              <h2 style={{color: "rgb(241, 165, 66)"}}>Favorite Cats</h2>
               {state.favorites.length !== 0 ? (
-                <div>
+                <div className="scrollBox">
                   {state.favorites.map(cat => (
-                    <Card key={cat._id} style={{ width: "100%" }}>
+                    <Card key={cat._id} style={{ width: "100%", backgroundColor: "rgb(241, 165, 66)", opacity: "90%" }}>
                       <Card.Img variant="top" src={"./assets/" + cat.picture} />
                       <Card.Body>
-                        <Card.Title>{cat.name}</Card.Title>
-                        <Card.Text size="md" >Age: {cat.age}</Card.Text>
-                        <Card.Text>
+                        <Card.Title style={{ color: "white", textAlign: "center" }}>{cat.name}</Card.Title>
+                        <Card.Text size="md" style={{ color: "white" }}>Age: {cat.age}</Card.Text>
+                        <Card.Text style={{ color: "white" }}>
                           {cat.details}
                         </Card.Text>
-                        <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
+                        <Card.Subtitle className="mb-2" style={{ color: "white", textAlign: "center" }}>Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
                       </Card.Body>
                     </Card>
                   ))}
@@ -107,20 +107,20 @@ function User() {
                 )
               }
             </Col>
-            <Col className="scrollBox" size="md-12">
-              <h2>Created Cats</h2>
+            <Col size="md-12">
+              <h2 style={{color: "rgb(241, 165, 66)"}}>Created Cats</h2>
               {state.created.length !== 0 ? (
-                <div>
+                <div className="scrollBox">
                   {state.created.map(createdcats => (
-                    <Card key={createdcats._id} style={{ width: "100%" }}>
+                    <Card key={createdcats._id} style={{ width: "100%", backgroundColor: "rgb(241, 165, 66)", opacity: "90%" }}>
                       <Card.Img variant="top" src={"./assets/" + createdcats.picture} />
                       <Card.Body>
-                        <Card.Title>{createdcats.name}</Card.Title>
-                        <Card.Text size="md" >Age: {createdcats.age}</Card.Text>
-                        <Card.Text>
+                        <Card.Title style={{ color: "white", textAlign: "center" }}>{createdcats.name}</Card.Title>
+                        <Card.Text size="md" style={{ color: "white" }}>Age: {createdcats.age}</Card.Text>
+                        <Card.Text style={{ color: "white" }}>
                           {createdcats.details}
                         </Card.Text>
-                        <Card.Subtitle className="mb-2 text-muted">Status: {createdcats.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
+                        <Card.Subtitle className="mb-2" style={{ color: "white", textAlign: "center" }}>Status: {createdcats.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
                       </Card.Body>
                     </Card>
                   ))}
