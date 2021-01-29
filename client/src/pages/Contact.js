@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import "./style.css";
@@ -44,28 +43,14 @@ function Contact() {
 
     checkLoggedIn();
   }, []);
-
-  return (
-    <div className="background">
-      <Header />
-      <Navigation />
-      <Jumbotron className="orangeBkg" style={{ margin: "5%" }}>
-        <h1 style={{ backgroundColor: "rgb(241, 165, 66)", color: "white" }}>Contact Pooler Paws!</h1>
-      </Jumbotron>
-      <ContactForm />
-    </div>
-  );
-}
-
-export default Contact;
-
-// static contact info
-
-// <p style={{ color: "white" }}>
-//   Thank you for your visiting our site and wanting to reach out. If you are interested in adopting a pet or helping out the best way to reach out is by our email address below.
-//         </p>
-//         <ul style={{ textAlign: "center", listStyle: "inside", color: "white" }}>
-//           <li>Email: Admin@PoolerPaws.com</li>
-//           <li>Area Served: Pooler, GA and the surrounding area within 20 miles</li>
-//           <li>Group Admin: Karen Menatti</li>
-//         </ul>
+    return (
+      <div>
+        <Header />
+        <Navigation />
+        <br></br>
+        <ContactForm />
+      </div>
+    );
+  }
+  
+  export default Contact;
