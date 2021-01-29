@@ -49,12 +49,14 @@ function Submit() {
   if (state.currentUser._id !== 0) {
     return (
       <div>
+
         <Header />
         <Navigation />
         <Jumbotron style={{margin: "5%"}} className="orangeBkg">
           <h1 style={{color: "white", backgroundColor: "rgb(241, 165, 66)"}}>Know an animal who needs a home? Add them below!</h1>
         </Jumbotron>
         <SubmitForm />
+
       </div>
     )
   } else {

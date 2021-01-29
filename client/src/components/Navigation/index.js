@@ -11,6 +11,7 @@ function Navigation() {
 
   if (state.currentUser._id !== 0) {
     return (
+
       <Nav className="mr-auto justify-content-center">
         <Navbar.Brand>
           <img
@@ -68,6 +69,7 @@ function Navigation() {
           />
         </Navbar.Brand>
       </Nav>
+
     );
   }
 }

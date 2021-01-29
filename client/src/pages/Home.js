@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Row from "react-bootstrap/Row";
+import Row  from "react-bootstrap/Row";
 import Navigation from "../components/Navigation";
 import Slides from "../components/Slides";
 import Header from "../components/Header";
-import Jumbotron from "react-bootstrap/Jumbotron";
+import Jumbotron from '../components/Jumbotron';
 import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./style.css";
 import { SET_CURRENT_USER } from "../utils/actions";
 import { useStoreContext } from "../utils/GlobalState";
 import axios from "axios";
-import { Col, Container } from "react-bootstrap";
 
 
 
@@ -44,7 +43,7 @@ function Home() {
           token,
           user: userRes.data,
         });
-      }
+      } 
     };
 
     checkLoggedIn();
@@ -88,6 +87,7 @@ function Home() {
       </Container>
     </div>
   )
+
 }
 
 export default Home;

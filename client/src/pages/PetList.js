@@ -6,6 +6,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_CATS, LOADING, ADD_FAVORITE, SET_CURRENT_USER } from "../utils/actions";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+
 import API from "../utils/API";
 import "./style.css";
 
@@ -82,20 +83,21 @@ function PetList() {
     <div>
       <Header />
       <Navigation />
-      <h2 style={{color: "rgb(241, 165, 66)"}}>Looking for a home</h2>
+      <h2>Looking for a home</h2>
       <Container>
         <Row>
           <Col size="md-12">
             {state.cats.map(cat => (
               <Card key={cat._id} style={{ width: "100%", backgroundColor: "rgb(241, 165, 66)", opacity: "97%", marginBottom: "3%" }}>
+
                 <Card.Img className="cardStyle" variant="top" src={"./assets/" + cat.picture} />
                 <Card.Body>
-                  <Card.Title style={{ color: "white", textAlign: "center" }}>{cat.name}</Card.Title>
-                  <Card.Text size="md" style={{ color: "white" }}>Age: {cat.age}</Card.Text>
-                  <Card.Text style={{ color: "white" }}>
+                  <Card.Title>{cat.name}</Card.Title>
+                  <Card.Text size="md" >{cat.age}</Card.Text>
+                  <Card.Text>
                     {cat.details}
                   </Card.Text>
-                  <Card.Subtitle className="mb-2" style={{ color: "white", textAlign: "center" }} >Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
+                  <Card.Subtitle className="mb-2 text-muted">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
                   {state.currentUser._id !== 0 ?
                     <div>
                       <Button onClick={(event) => { addFavorite(event, cat) }}>Like</Button>

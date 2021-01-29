@@ -1,7 +1,10 @@
+.d-block w-100{
+    height:100px;
+    width: 100px;
+}
+
 .title{
-    /* color: rgb(245, 102, 7); */
-    color: white;
-    font-size: smaller;
+    color: rgb(245, 102, 7);
 }
 
 .title2{

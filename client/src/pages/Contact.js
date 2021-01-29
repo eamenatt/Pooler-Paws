@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import "./style.css";
@@ -49,6 +48,7 @@ function Contact() {
         <Header />
         <Navigation />
         <br></br>
+
         <Jumbotron >
             <h3>Contact Pooler Paws!</h3>
             <p>
@@ -60,9 +60,11 @@ function Contact() {
                <li>Group Admin: Karen Menatti</li>
            </ul>
         </Jumbotron>
+
         <ContactForm />
       </div>
     );
   }
-  
+
   export default Contact;
+

@@ -6,7 +6,7 @@ function Slides() {
     return (
 
         <Carousel className="slideStyle">
-            <Carousel.Item>
+            <Carousel.Item interval={1000}>
                 <img
                     className="d-block w-100"
                     src={`${process.env.PUBLIC_URL}/assets/tommie.jpg`}
@@ -16,14 +16,16 @@ function Slides() {
                     <h2 className="title">Loving animals in need of a home</h2>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            <Carousel.Item interval={500}>
                 <img
                     className="d-block w-100"
                     src={`${process.env.PUBLIC_URL}/assets/bootsie.jpg`}
                     alt="Third slide"
                 />
                 <Carousel.Caption>
+
                     <h2 className="title">Find a furry friend!</h2>
+
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

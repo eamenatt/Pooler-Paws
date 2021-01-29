@@ -1,8 +1,9 @@
 h2{
-  padding: 20px;
+    padding: 20px;
   text-align: center;
   opacity: .97;
-  color: white;
+  background-color: #fff;
+  color: grey;
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -10,20 +11,21 @@ h2{
 h3{
   text-align: center;
   background:transparent;
+
   color:rgb(241, 165, 66);
+
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 p{
     text-align: center;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* width: 75%; */
-    margin: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
     font-family: serif;
     font-size: 1.25em;
-    /* letter-spacing:1px; */
+    letter-spacing:1px;
     font-weight: bold;
 }
 
@@ -37,6 +39,7 @@ body{
   height: 100%;
 }
 
+
 .orangeBkg { 
   background-color: rgb(241, 165, 66);
   opacity: 95%; 
@@ -48,6 +51,7 @@ body{
   width: 100%;
 
 }
+
 
 .contactInfo{
   color:white;font-size: x-large;
