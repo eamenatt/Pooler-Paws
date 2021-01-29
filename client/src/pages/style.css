@@ -71,3 +71,19 @@ font-family: 'Times New Roman', Times, serif;
   opacity: .97;
   background-color: rgb(230, 230, 230);
 }
+
+.success {
+  color: #0ff40f;
+}
+
+.error {
+  color: #960303;
+}
+
+/* .contactUsForm {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background-color: orange;
+} */
