@@ -10,7 +10,7 @@ function Navigation() {
 
   if (state.currentUser._id !== 0) {
     return (
-      <Nav className="mr-auto orange">
+      <Nav className="mr-auto justify-content-center">
         <Nav.Link as={NavLink} className="navBar" to="/home">Home</Nav.Link>
         <Nav.Link as={NavLink} className="navBar" to="/contact">Contact Us</Nav.Link>
         <Nav.Link as={NavLink} className="navBar" to="/petlist">Pet List</Nav.Link>
@@ -20,22 +20,19 @@ function Navigation() {
           <LogOut />
         </Form>
       </Nav>
-
     );
   } else {
     return (
-      // <Navbar bg="light" expand="lg">
-      <Nav className="mr-auto orange">
+      <Nav className="mr-auto justify-content-center">
         <Nav.Link as={NavLink} className="navBar" to="/home">Home</Nav.Link>
         <Nav.Link as={NavLink} className="navBar" to="/contact">Contact Us</Nav.Link>
         <Nav.Link as={NavLink} className="navBar" to="/petlist">Pet List</Nav.Link>
-        <NavDropdown title="Sign In" id="basic-nav-dropdown">
+        <NavDropdown className="navBar" title="Sign In" id="basic-nav-dropdown">
           <NavDropdown.Item as={NavLink} className="navBar" to="/signin">Sign In</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item as={NavLink} className="navBar" to="/signup">Create Account</NavDropdown.Item>
         </NavDropdown>
       </Nav>
-      // </Navbar>
     );
   }
 }
