@@ -71,7 +71,7 @@ function Home() {
             </p>
         </Jumbotron>
         <Slides />
-        <Jumbotron style={{ borderRadius: "25px", marginTop: "3%"}} className="orangeBkg">
+        <Jumbotron style={{ borderRadius: "25px"}} className="greyBkg">
           <h3>How can you help?</h3>
           <p style={{color: "honeydew", fontSize: "large", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>
             We are so happy you’re interested in getting involved with our work here at Pooler Paws Inc..
@@ -81,7 +81,7 @@ function Home() {
             </p>
           <p>
             <Link to="/Contact">
-              <Button style={{ color: "white" }} className="send-form" variant="outline-secondary">Contact Us</Button>
+              <Button className="send-btn" variant="secondary">Contact Us</Button>
             </Link>
           </p>
         </Jumbotron>

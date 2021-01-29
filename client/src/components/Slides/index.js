@@ -13,7 +13,7 @@ function Slides() {
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3 className="title">Loving animals in need of a home</h3>
+                    <h2 className="title">Loving animals in need of a home</h2>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -23,7 +23,7 @@ function Slides() {
                     alt="Third slide"
                 />
                 <Carousel.Caption>
-                    <h3 className="title">Find a furry friend!</h3>
+                    <h2 className="title">Find a furry friend!</h2>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -33,7 +33,7 @@ function Slides() {
                     alt="Third slide"
                 />
                 <Carousel.Caption>
-                    <h3 className="title">Learn more about what these animals have been through</h3>
+                    <h2 className="title">Be a hero to animals who have endured tragedy!</h2>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

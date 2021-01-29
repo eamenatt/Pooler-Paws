@@ -87,7 +87,7 @@ function PetList() {
         <Row>
           <Col size="md-12">
             {state.cats.map(cat => (
-              <Card key={cat._id} style={{ width: "100%", backgroundColor: "rgb(241, 165, 66)", opacity: "90%", marginBottom: "5%" }}>
+              <Card key={cat._id} style={{ width: "100%", backgroundColor: "rgb(241, 165, 66)", opacity: "97%", marginBottom: "3%" }}>
                 <Card.Img className="cardStyle" variant="top" src={"./assets/" + cat.picture} />
                 <Card.Body>
                   <Card.Title style={{ color: "white", textAlign: "center" }}>{cat.name}</Card.Title>

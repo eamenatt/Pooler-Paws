@@ -4,12 +4,13 @@ import { ADD_CAT, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
+import orangepaw from "./orangepaw.png";
 
 function SubmitForm() {
   const nameRef = useRef();
   const ageRef = useRef();
   const detailsRef = useRef();
+  // const pictureRef = useRef()
   // const pictureRef = useRef();
   const [state, dispatch] = useStoreContext();
 
@@ -21,6 +22,7 @@ function SubmitForm() {
         name: nameRef.current.value,
         age: parseInt(ageRef.current.value),
         details: detailsRef.current.value,
+        // picture: pictureRef.current.value || {orangepaw}
       };
       const newCat = await API.saveCat(savedCat)
       dispatch({

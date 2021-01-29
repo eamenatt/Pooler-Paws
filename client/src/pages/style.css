@@ -10,7 +10,7 @@ h2{
 h3{
   text-align: center;
   background:transparent;
-  color: white;
+  color:rgb(241, 165, 66);
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -39,7 +39,14 @@ body{
 
 .orangeBkg { 
   background-color: rgb(241, 165, 66);
-  opacity: 90%; 
+  opacity: 95%; 
+}
+
+.greyBkg { 
+  background-color: rgb(151, 150, 150);
+  opacity: 90%;
+  width: 100%;
+
 }
 
 .contactInfo{
@@ -72,15 +79,13 @@ font-family: 'Times New Roman', Times, serif;
   background-color: rgb(230, 230, 230);
 }
 
-.success {
-  color: #0ff40f;
-}
-
-.error {
-  color: #960303;
-}
-
 li {
   list-style: none;
   text-align:center;
+}
+
+.send-btn {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
