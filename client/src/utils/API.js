@@ -48,4 +48,7 @@ export default {
   getCreated: function(userId) {
     return axios.get("/api/user/created/" + userId);
   },
+  send: function(res) {
+    return axios.post("/api/send");
+  },
 };

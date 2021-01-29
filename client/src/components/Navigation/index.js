@@ -10,10 +10,10 @@ function Navigation() {
 
   if (state.currentUser._id !== 0) {
     return (
-      <Navbar bg="light" expand="lg" activeKey="/home">
+      <Navbar bg="light" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto" defaultActiveKey="/home">
+          <Nav className="mr-auto">
             <Nav.Link as={NavLink} className="navBar" to="/home">Home</Nav.Link>
             <Nav.Link as={NavLink} className="navBar" to="/contact">Contact Us</Nav.Link>
             <Nav.Link as={NavLink} className="navBar" to="/petlist">Pet List</Nav.Link>
@@ -29,9 +29,9 @@ function Navigation() {
     );
   } else {
     return (
-      <Navbar bg="light" expand="lg" activeKey="/home">
+      <Navbar bg="light" expand="lg">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Nav className="mr-auto"defaultActiveKey="/home">
+          <Nav className="mr-auto">
             <Nav.Link as={NavLink} className="navBar" to="/home">Home</Nav.Link>
             <Nav.Link as={NavLink} className="navBar" to="/contact">Contact Us</Nav.Link>
             <Nav.Link as={NavLink} className="navBar" to="/petlist">Pet List</Nav.Link>
