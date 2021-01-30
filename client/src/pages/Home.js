@@ -55,9 +55,9 @@ function Home() {
       <Header />
       <Navigation />
       <Container>
-        <Jumbotron fluid style={{ borderRadius: "25px" , marginTop: "5%"}} className="orangeBkg">
+        <Jumbotron fluid className="home-jumbotron">
           <h2>About Us</h2>
-          <p style={{color: "honeydew", fontSize: "large", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>
+          <p className="home-body">
             We are a local non-profit organization helping the feral cat community in Pooler, GA. Our
             members
             are kind hearted, caring, generous cat loving humans! Our mission is to trap, neuter and return
@@ -71,9 +71,9 @@ function Home() {
             </p>
         </Jumbotron>
         <Slides />
-        <Jumbotron style={{ borderRadius: "25px", marginTop: "3%"}} className="orangeBkg">
+        <Jumbotron className="home-jumbotron">
           <h3>How can you help?</h3>
-          <p style={{color: "honeydew", fontSize: "large", fontFamily: "Georgia, 'Times New Roman', Times, serif"}}>
+          <p className="home-body">
             We are so happy you’re interested in getting involved with our work here at Pooler Paws Inc..
             There are so many ways for you to help, and we truly appreciate each and every effort. By lending your
             support, you’ll become a valuable part of our Nonprofit Organization and help to strengthen our
@@ -81,7 +81,7 @@ function Home() {
             </p>
           <p>
             <Link to="/Contact">
-              <Button style={{ color: "white" }} className="send-form" variant="outline-secondary">Contact Us</Button>
+              <Button className="send-form" variant="outline-secondary">Contact Us</Button>
             </Link>
           </p>
         </Jumbotron>

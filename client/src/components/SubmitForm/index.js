@@ -4,6 +4,7 @@ import { ADD_CAT, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./style.css"
 
 
 function SubmitForm() {
@@ -48,7 +49,7 @@ function SubmitForm() {
   // };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form className="form" onSubmit={handleSubmit}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>What is your cat's name?</Form.Label>
         <Form.Control required ref={nameRef} placeholder="Write cat's name here... (required)" />

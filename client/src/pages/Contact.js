@@ -49,8 +49,8 @@ function Contact() {
     <div className="background">
       <Header />
       <Navigation />
-      <Jumbotron className="orangeBkg" style={{ margin: "5%" }}>
-        <h1 style={{ backgroundColor: "rgb(241, 165, 66)", color: "white" }}>Contact Pooler Paws!</h1>
+      <Jumbotron className="contact-jumbotron">
+        <h1 className="headline">Contact Pooler Paws!</h1>
       </Jumbotron>
       <ContactForm />
     </div>

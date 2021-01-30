@@ -6,6 +6,7 @@ import API from "../../utils/API";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import SignUpBtn from "../SignUpButton";
+import "./style.css";
 
 function SignIn() {
   const [state, dispatch] = useStoreContext();
@@ -40,7 +41,7 @@ function SignIn() {
 
   return (
     <div>
-      <Form onSubmit={e => { handleFormSubmit(e) }}>
+      <Form className="form" onSubmit={e => { handleFormSubmit(e) }}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Username</Form.Label>
           <Form.Control required ref={usernameRef} placeholder="Enter username" />

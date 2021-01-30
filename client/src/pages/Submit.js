@@ -51,8 +51,8 @@ function Submit() {
       <div>
         <Header />
         <Navigation />
-        <Jumbotron style={{margin: "5%"}} className="orangeBkg">
-          <h1 style={{color: "white", backgroundColor: "rgb(241, 165, 66)"}}>Know an animal who needs a home?</h1>
+        <Jumbotron className="contact-jumbotron">
+          <h1 className="headline">Know an animal who needs a home?</h1>
         </Jumbotron>
         <SubmitForm />
       </div>
