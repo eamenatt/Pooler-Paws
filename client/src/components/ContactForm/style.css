@@ -8,4 +8,14 @@
     padding: 1rem;
     padding-bottom: 3rem;
     border-radius: 25px;
+    margin-bottom: 4%;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+h1 {
+    border-radius: 25px;
 }
