@@ -53,7 +53,6 @@ function Submit() {
         <Navigation />
         <Jumbotron className="contact-jumbotron">
           <h1 className="headline">Know an animal who needs a home?</h1>
-          <h3 className="headline">Input their information below to add them to our listing!</h3>
         </Jumbotron>
         <SubmitForm />
       </div>

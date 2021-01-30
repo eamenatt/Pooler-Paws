@@ -33,7 +33,7 @@ function Slides() {
                     alt="Third slide"
                 />
                 <Carousel.Caption>
-                    <h3 className="title">Rescue animals in need</h3>
+                    <h3 className="title">Learn more about what these animals have been through</h3>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
