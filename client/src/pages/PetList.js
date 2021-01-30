@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Alert, Button, Card, Col, Container, Row } from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import Header from "../components/Header";
 import { useStoreContext } from "../utils/GlobalState";
@@ -14,6 +14,8 @@ function PetList() {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
   const [user, setUser] = useState();
+  const [danger, setDangerAlert] = useState(false);
+  const [success, setSuccessAlert] = useState(false);
 
   const getCats = () => {
     dispatch({ type: LOADING });
@@ -31,9 +33,11 @@ function PetList() {
     e.preventDefault();
     const match = state.favorites.filter(favorite => favorite._id === cat._id).length;
     if (match) {
-      alert("You have already liked this cat!");
+      // alert("You have already liked this cat!");
+      setDangerAlert(true);
     } else {
-      alert("Cat Succesfully Liked!");
+      // alert("Cat Succesfully Liked!");
+      setSuccessAlert(true);
       await API.addFavorite(state.currentUser._id, cat)
       dispatch({ type: LOADING });
       const favorites = await API.getFavorites(state.currentUser._id);
@@ -81,6 +85,8 @@ function PetList() {
 
   return (
     <div>
+      <Alert className="alert-fixed" show={danger} variant="danger" onClose={() => setDangerAlert(false)} dismissible>You have already like this cat!</Alert>
+      <Alert className="alert-fixed" show={success} variant="success" onClose={() => setSuccessAlert(false)} dismissible>Cat Succesfully Liked!</Alert>
       <Header />
       <Navigation />
       <h2 className="orange-text">Looking for a home</h2>
