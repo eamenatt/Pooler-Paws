@@ -2,7 +2,7 @@ h2{
     padding: 20px;
   text-align: center;
   opacity: .97;
-  background-color: transparent;
+  background-color: #fff;
   color: grey;
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -32,15 +32,6 @@ body{
   background-size: cover;
   margin: 0;
   height: 100%;
-}
-
-.alert-fixed {
-  position:fixed; 
-  top: 0px; 
-  left: 0px; 
-  width: 100%;
-  z-index:9999; 
-  border-radius:0px
 }
 
 .contact-jumbotron {

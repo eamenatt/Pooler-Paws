@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, NavDropdown, Form } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Form } from "react-bootstrap";
 import "./style.css";
 import { NavLink } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
@@ -17,11 +17,7 @@ function Navigation() {
           <Nav.Link as={NavLink} className="navBar" to="/petlist">Pet List</Nav.Link>
           <Nav.Link as={NavLink} className="navBar" to="/submit">Add a new pet</Nav.Link>
           <Nav.Link as={NavLink} className="navBar" to="/user">User Page</Nav.Link>
-          <Form inline className="userStatus">
-            <span>Welcome, {state.currentUser.username}</span>
-            <LogOut />
-          </Form>
-          
+          <LogOut />
         </Nav>
       </div>
     );
@@ -38,7 +34,6 @@ function Navigation() {
             <NavDropdown.Item as={NavLink} className="navBar" to="/signup">Create Account</NavDropdown.Item>
           </NavDropdown>
         </Nav>
-        
       </div>
     );
   }

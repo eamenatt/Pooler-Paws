@@ -9,13 +9,12 @@
 }
 
 .slideStyle{
-    width: 60%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
-    border: rgb(244,101,36);
-    border-width: 3em;
+    border: palegoldenrod;
     border-width: 5px;
-    border-style:solid;
+    border-style: dotted;
     margin-bottom: 10px;
     padding: 5px
 }
