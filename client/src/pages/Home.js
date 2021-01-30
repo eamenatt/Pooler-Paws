@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Row from "react-bootstrap/Row";
 import Navigation from "../components/Navigation";
 import Slides from "../components/Slides";
 import Header from "../components/Header";
 import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./style.css";
 import { SET_CURRENT_USER } from "../utils/actions";
 import { useStoreContext } from "../utils/GlobalState";
 import axios from "axios";
-import { Col, Container } from "react-bootstrap";
 
 
 
@@ -44,7 +43,7 @@ function Home() {
           token,
           user: userRes.data,
         });
-      }
+      } 
     };
 
     checkLoggedIn();
@@ -56,7 +55,7 @@ function Home() {
       <Navigation />
       <Container>
         <Jumbotron fluid className="home-jumbotron">
-          <h2>About Us</h2>
+          <h2 className="headline">About Us</h2>
           <p className="home-body">
             We are a local non-profit organization helping the feral cat community in Pooler, GA. Our
             members
@@ -72,7 +71,7 @@ function Home() {
         </Jumbotron>
         <Slides />
         <Jumbotron className="home-jumbotron">
-          <h3>How can you help?</h3>
+          <h3 className="headline">How can you help?</h3>
           <p className="home-body">
             We are so happy you’re interested in getting involved with our work here at Pooler Paws Inc..
             There are so many ways for you to help, and we truly appreciate each and every effort. By lending your

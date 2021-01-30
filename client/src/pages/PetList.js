@@ -6,6 +6,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_CATS, LOADING, ADD_FAVORITE, SET_CURRENT_USER } from "../utils/actions";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+
 import API from "../utils/API";
 import "./style.css";
 

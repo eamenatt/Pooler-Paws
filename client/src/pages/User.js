@@ -81,7 +81,7 @@ function User() {
             <Col size="md-12">
               <h2 className="orange-text">Favorite Cats</h2>
               {state.favorites.length !== 0 ? (
-                <div className="scrollBox">
+                <div>
                   {state.favorites.map(cat => (
                     <Card key={cat._id} className="pet-list-card">
                       <Card.Img variant="top" className="cardStyle" src={"./assets/" + cat.picture} />
@@ -110,7 +110,7 @@ function User() {
             <Col size="md-12">
               <h2 className="orange-text">Created Cats</h2>
               {state.created.length !== 0 ? (
-                <div className="scrollBox">
+                <div>
                   {state.created.map(createdcats => (
                     <Card key={createdcats._id} className="pet-list-card">
                       <Card.Img variant="top" className="cardStyle" src={"./assets/" + createdcats.picture} />

@@ -1,8 +1,9 @@
 h2{
-  padding: 20px;
+    padding: 20px;
   text-align: center;
   opacity: .97;
-  color: white;
+  background-color: #fff;
+  color: grey;
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -10,7 +11,7 @@ h2{
 h3{
   text-align: center;
   background:transparent;
-  color: white;
+  color: grey;
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -114,11 +115,3 @@ body{
   width: 75%;
   height: auto;
 }
-
-/* .contactUsForm {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  background-color: orange;
-} */

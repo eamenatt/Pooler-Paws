@@ -49,6 +49,7 @@ class Contact extends Component {
 
   render() {
     return (
+
       <div>
         <form className="contact-form" onSubmit={(e) => this.formSubmit(e)}>
           <Form.Group controlId="name">
@@ -90,6 +91,8 @@ class Contact extends Component {
           </Button>
         </form>
       </div>
+
+
     );
   }
 }
