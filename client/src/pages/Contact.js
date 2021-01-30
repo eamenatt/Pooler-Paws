@@ -49,9 +49,17 @@ function Contact() {
     <div className="background">
       <Header />
       <Navigation />
-      <Jumbotron className="contact-jumbotron">
-        <h1 className="headline">Contact Pooler Paws!</h1>
-      </Jumbotron>
+      <Jumbotron>
+            <h1>Contact Pooler Paws!</h1>
+            <p>
+                Thank you for your visiting our site and wanting to reach out. If you are interested in adopting a pet or helping out the best way to reach out filling out a form below. 
+            </p>
+           <ul>
+               <li>Email: Admin@PoolerPaws.com</li>
+               <li>Area Served: Pooler, GA and the surrounding area within 20 miles</li>
+               <li>Group Admin: Karen Menatti</li>
+           </ul>
+        </Jumbotron>
       <ContactForm />
     </div>
   );
