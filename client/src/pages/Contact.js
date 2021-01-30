@@ -49,7 +49,7 @@ function Contact() {
     <div className="background">
       <Header />
       <Navigation />
-      <Jumbotron>
+      <Jumbotron className="contact-jumbotron contactInfo">
             <h1>Contact Pooler Paws!</h1>
             <p>
                 Thank you for your visiting our site and wanting to reach out. If you are interested in adopting a pet or helping out the best way to reach out filling out a form below. 
