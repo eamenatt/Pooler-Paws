@@ -1,10 +1,11 @@
-.form{
-    /* float: left;
-    align-items: center;
-    position: relative; */
-    display: block;
+.form {
   margin-left: auto;
   margin-right: auto;
-  padding: 5px;
-  width: 33%;
+  width: 70%;
+  background-color: rgb(244,101,36);
+  color: white;
+  opacity: .97;
+  padding: 1rem;
+  padding-bottom: 3rem;
+  border-radius: 25px;
 }

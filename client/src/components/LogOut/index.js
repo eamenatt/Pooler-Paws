@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { SET_CURRENT_USER } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
+import "./style.css";
 
 function LogOut() {
   const [state, dispatch] = useStoreContext();
@@ -21,7 +22,7 @@ function LogOut() {
   }
   if (state.currentUser._id !== 0) {
     return (
-      <Button onClick={handleLogOut} variant="light" className="rightSideBtn">Log Out</Button>
+      <Button onClick={handleLogOut} className="pooler" variant="link">Log Out</Button>
     );
   }
 }

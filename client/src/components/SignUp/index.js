@@ -5,6 +5,7 @@ import { SET_CURRENT_USER } from "../../utils/actions";
 import { useStoreContext } from "../../utils/GlobalState";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./style.css";
 
 function SignUp() {
   const [state, dispatch] = useStoreContext();
@@ -45,7 +46,7 @@ function SignUp() {
 
   return (
 
-    <Form onSubmit={e => { handleSubmit(e) }}>
+    <Form className="form" onSubmit={e => { handleSubmit(e) }}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control required ref={emailRef} type="email" placeholder="Enter email" />
@@ -71,7 +72,7 @@ function SignUp() {
       </Form.Group> */}
       <Button variant="primary" type="submit">
         Sign Up
-    </Button>
+      </Button>
     </Form>
   );
 }

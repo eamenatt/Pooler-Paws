@@ -18,12 +18,9 @@ h3{
 
 p{
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
+    margin: 1%;
     font-family: serif;
     font-size: 1.25em;
-    letter-spacing:1px;
     font-weight: bold;
 }
 
@@ -37,20 +34,64 @@ body{
   height: 100%;
 }
 
+.contact-jumbotron {
+  background-color: rgb(244,101,36);
+  opacity: .95;
+  margin: 5%;
+  border-radius: 25px;
+}
+
+.home-jumbotron {
+  background-color: rgb(244,101,36);
+  opacity: .95;
+  border-radius: 25px; 
+  margin-top: 3%;
+}
+
+.home-body {
+  color: honeydew;
+  font-size: large; 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pet-list-text {
+  color: white; 
+  text-align: center;
+}
+
+.pet-list-card {
+  background-color: rgb(244,101,36); 
+  opacity: .95; 
+  width: 100%; 
+  margin-bottom: 5%;
+  color: white;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.headline {
+  background-color: rgb(244,101,36);
+  color: white;
+}
+
+.orange-text {
+  color: rgb(244,101,36);
+}
+
 .contactInfo{
-  color:white;font-size: x-large;
+  color:white;
+  font-size: x-large;
 }
 
 .send-form{
   font-size: larger;
-font-family: 'Times New Roman', Times, serif;
-
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
 }
 
 .scrollBox{
   overflow: auto;
   height: 100rem;
-
 }
 
 .cardStyle{
@@ -62,11 +103,6 @@ font-family: 'Times New Roman', Times, serif;
   padding: 5px;
 }
 
-.card{
-  opacity: .97;
-  background-color: rgb(230, 230, 230);
-}
-
 .success {
   color: #0ff40f;
 }
@@ -75,10 +111,7 @@ font-family: 'Times New Roman', Times, serif;
   color: #960303;
 }
 
-/* .contactUsForm {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  background-color: orange;
-} */
+.user-image {
+  width: 75%;
+  height: auto;
+}

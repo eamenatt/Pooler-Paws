@@ -3,12 +3,9 @@
     width: 100px;
 }
 
-.title{
-    color: rgb(245, 102, 7);
-}
-
-.title2{
-    color: rgb(124, 34, 160);
+.title {
+    color: white;
+    font-size: smaller;
 }
 
 .slideStyle{

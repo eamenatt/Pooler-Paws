@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
+import Jumbotron from "react-bootstrap/Jumbotron";
 import "./style.css";
 import axios from "axios";
 import { useStoreContext } from "../utils/GlobalState";
@@ -43,14 +44,17 @@ function Contact() {
 
     checkLoggedIn();
   }, []);
-    return (
-      <div>
-        <Header />
-        <Navigation />
-        <br></br>
-        <ContactForm />
-      </div>
-    );
-  }
-  
-  export default Contact;
+
+  return (
+    <div className="background">
+      <Header />
+      <Navigation />
+      <Jumbotron className="contact-jumbotron">
+        <h1 className="headline">Contact Pooler Paws!</h1>
+      </Jumbotron>
+      <ContactForm />
+    </div>
+  );
+}
+
+export default Contact;

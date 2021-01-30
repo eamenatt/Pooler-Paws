@@ -49,14 +49,12 @@ function Submit() {
   if (state.currentUser._id !== 0) {
     return (
       <div>
-        <div>
-          <Header />
-          <Navigation />
-          <Jumbotron>
-            <h1>Know an animal who needs a home?</h1>
-          </Jumbotron>
-          <SubmitForm />
-        </div>
+        <Header />
+        <Navigation />
+        <Jumbotron className="contact-jumbotron">
+          <h1 className="headline">Know an animal who needs a home?</h1>
+        </Jumbotron>
+        <SubmitForm />
       </div>
     )
   } else {
