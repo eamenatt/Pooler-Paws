@@ -7,6 +7,7 @@ import NoMatch from "./pages/NoMatch";
 import Contact from "./pages/Contact";
 import PetList from "./pages/PetList";
 import Submit from "./pages/Submit";
+import CatStory from "./pages/CatStory";
 import Home from "./pages/Home";
 import { StoreProvider } from "./utils/GlobalState";
 import User from "./pages/User";
@@ -35,6 +36,9 @@ function App() {
               </Route>
               <Route exact path="/signup">
                 <SignUp />
+              </Route>
+              <Route exact path="/catstory">
+                <CatStory />
               </Route>
               <Route exact path="/user">
                 <User />

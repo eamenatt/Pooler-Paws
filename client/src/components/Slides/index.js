@@ -20,7 +20,7 @@ function Slides() {
                 <img
                     className="d-block w-100"
                     src={`${process.env.PUBLIC_URL}/assets/bootsie.jpg`}
-                    alt="Third slide"
+                    alt="Second slide"
                 />
                 <Carousel.Caption>
                     <h3 className="title">Find a furry friend!</h3>
@@ -29,7 +29,7 @@ function Slides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={`${process.env.PUBLIC_URL}/assets/house.jpg`}
+                    src={`${process.env.PUBLIC_URL}/assets/twocats.jpg`}
                     alt="Third slide"
                 />
                 <Carousel.Caption>
