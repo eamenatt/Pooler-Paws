@@ -115,6 +115,7 @@ const StoreProvider = ({ value = [], ...props }) => {
       _id: 0,
       name: "",
       age: "",
+      gender: "",
       details: "",
       picture: "",
       availability: true
