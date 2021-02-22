@@ -52,12 +52,26 @@ function Contact() {
       <Jumbotron>
             <h1>Contact Pooler Paws!</h1>
             <p>
-                Thank you for your visiting our site and wanting to reach out. If you are interested in adopting a pet or helping out the best way to reach out filling out a form below. 
+                Thank you for your visiting our site and wanting to reach out. We have many ways to actively get involved with Pooler Paws! Contact us by filling out the form below for any of the following:  
             </p>
            <ul>
-               <li>Email: Admin@PoolerPaws.com</li>
-               <li>Area Served: Pooler, GA and the surrounding area within 20 miles</li>
-               <li>Group Admin: Karen Menatti</li>
+               <li>Socialize the cats and help clean at the Cat House (a great idea for middle and high school students looking for service hours)</li>
+               <li>Feed once or twice a week at feral colonies nearby.</li>
+               <li>Assist us with our fundraising efforts.</li>
+           </ul>
+           <p>
+                Donation information: We are a 501(c)(3) nonprofit. All contributions are tax deductible.  
+            </p>
+           <ul>
+               <li>Paypal  (paypal.me/poolerpaws2)</li>
+               <li>Checks (made out to Pooler Paws, Inc.) Please use contact form for address to mail checks to.</li>
+                <li>Cat litter.  Clumping and multi-cat type is preferred.</li>
+                <li>Canned and dry cat food.  </li>
+                <li>Canned and dry kitten food.</li>
+                <li>Tall (13 gallon) Kitchen drawstring garbage bags.</li>  
+                <li>Cleaning supplies: dish soap, multipurpose cleaners, bleach, laundry detergent
+                Paper towels.</li>
+                <li>XL Piddle Pads</li>
            </ul>
         </Jumbotron>
       <ContactForm />

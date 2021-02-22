@@ -124,3 +124,20 @@ body{
   width: 75%;
   height: auto;
 }
+
+.storypic {
+  width: 55%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+
+li {
+  list-style:circle;
+  list-style-position: inside;
+  text-align: left;
+  margin-left: 30%;
+  margin-right: auto;
+  /* font-weight: bold; */
+}
