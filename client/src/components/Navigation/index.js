@@ -32,7 +32,7 @@ function Navigation() {
         <Nav className="justify-content-center">
           <Nav.Link as={NavLink} className="navBar" to="/home">Home</Nav.Link>
           <Nav.Link as={NavLink} className="navBar" to="/contact">Contact Us</Nav.Link>
-          <Nav.Link as={NavLink} className="navBar" to="/petlist">Pet List</Nav.Link>
+          <Nav.Link as={NavLink} className="navBar" to="/petlist">Available Adoptions</Nav.Link>
           <Nav.Link as={NavLink} className="navBar" to="/catstory">Adoption Stories</Nav.Link>
           <NavDropdown title="Sign In" id="basic-nav-dropdown" className="navBar">
             <NavDropdown.Item as={NavLink} className="navBar" to="/signin">Sign In</NavDropdown.Item>
