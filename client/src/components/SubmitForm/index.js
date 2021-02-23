@@ -10,7 +10,7 @@ import { Alert } from "react-bootstrap";
 
 function SubmitForm() {
   const nameRef = useRef();
-  const ageRef = useRef();
+  const genderRef = useRef();
   const detailsRef = useRef();
   // const pictureRef = useRef();
   const [state, dispatch] = useStoreContext();
@@ -22,7 +22,7 @@ function SubmitForm() {
       dispatch({ type: LOADING });
       const savedCat = {
         name: nameRef.current.value,
-        age: parseInt(ageRef.current.value),
+        gender: genderRef.current.value,
         details: detailsRef.current.value,
       };
       const newCat = await API.saveCat(savedCat)
@@ -33,7 +33,7 @@ function SubmitForm() {
       await API.addCreated(state.currentUser._id, newCat.data)
       setShow(true);
       nameRef.current.value = "";
-      ageRef.current.value = "";
+      genderRef.current.value = "";
       detailsRef.current.value = "";
     } catch (error) {
       console.log(error);
@@ -44,15 +44,15 @@ function SubmitForm() {
     <div>
       <Alert show={show} variant="success" className="alert-fixed" onClose={() => setShow(false)} dismissible>You have successfully added a cat!</Alert>
       <Form className="form" onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group controlId="FirstQuestion">
           <Form.Label>What is your cat's name?</Form.Label>
           <Form.Control required ref={nameRef} placeholder="Write cat's name here... (required)" />
         </Form.Group>
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>What is your cat's age?</Form.Label>
-          <Form.Control required ref={ageRef} placeholder="Write cat's age here... (required)" />
+        <Form.Group controlId="GenderQuestion">
+          <Form.Label>What is your cat's gender?</Form.Label>
+          <Form.Control required ref={genderRef} placeholder="Write cat's gender here... (required)" />
         </Form.Group>
-        <Form.Group controlId="exampleForm.ControlTextarea1">
+        <Form.Group controlId="TextQuestion">
           <Form.Label>Please provide a description of your cat.</Form.Label>
           <Form.Control as="textarea" required ref={detailsRef} placeholder="Provide description here (required)" rows={3} />
         </Form.Group>

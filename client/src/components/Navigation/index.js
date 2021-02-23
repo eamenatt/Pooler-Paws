@@ -15,7 +15,7 @@ function Navigation() {
           <Nav.Link as={NavLink} className="navBar" to="/home">Home</Nav.Link>
           <Nav.Link as={NavLink} className="navBar" to="/contact">Contact Us</Nav.Link>
           <Nav.Link as={NavLink} className="navBar" to="/petlist">Pet List</Nav.Link>
-          <Nav.Link as={NavLink} className="navBar" to="/submit">Add a new pet</Nav.Link>
+          {/* <Nav.Link as={NavLink} className="navBar" to="/submit">Add a new pet</Nav.Link> */}
           <Nav.Link as={NavLink} className="navBar" to="/catstory">Adoption Stories</Nav.Link>
           <Nav.Link as={NavLink} className="navBar" to="/user">User Page</Nav.Link>
           <Form inline className="userStatus">
