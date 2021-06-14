@@ -9,7 +9,7 @@ function Slides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={`${process.env.PUBLIC_URL}/assets/tommie.jpg`}
+                    src={`${process.env.PUBLIC_URL}/assets/slide1.jpg`}
                     alt="First slide"
                 />
                 <Carousel.Caption>
@@ -19,7 +19,7 @@ function Slides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={`${process.env.PUBLIC_URL}/assets/bootsie.jpg`}
+                    src={`${process.env.PUBLIC_URL}/assets/slide2.jpg`}
                     alt="Second slide"
                 />
                 <Carousel.Caption>
@@ -29,7 +29,7 @@ function Slides() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src={`${process.env.PUBLIC_URL}/assets/twocats.jpg`}
+                    src={`${process.env.PUBLIC_URL}/assets/slide3.jpg`}
                     alt="Third slide"
                 />
                 <Carousel.Caption>
