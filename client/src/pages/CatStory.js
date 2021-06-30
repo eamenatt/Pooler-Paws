@@ -11,7 +11,22 @@ function CatStory() {
             <Header />
             <Navigation />
             <Container>
-                <h2 className="headline">Share Your Story</h2>
+                <h2 className="headline">Special Adoption Needed!</h2>
+                <Jumbotron className="home-jumbotron">
+                    <h3 className="headline">Meet Midnight!</h3>
+                    <img className="storypic" src={`${process.env.PUBLIC_URL}/assets/midnight.jpg`} />
+                    <p className="home-body">
+                        Meet Midnight, the mascot and ambassador of Pooler Paws!  This handsome gentleman wasn't always so elegant and refined!  Last summer, Midnight was rescued following a tragic housefire that left the homeowner and several of her pets dead. The dozen cats who survived the fire were now left homeless. Pooler Paws was called in to help these poor kitties. Immediately our volunteers noticed that one of the kitties kept bumping into things and was being pushed away by the other cats when he tried to eat.  He also had some very bad burns on his back!  He was whisked off to the vets where it was determined he was blind probably due to a virus he contracted as a kitten.  He can see shapes, but that's it.  He is also a senior kitty, probably around 8 - 10 years old.  He was given medications for his burns, but there wasn't anything to be done with his vision.  Clearly, Midnight could not be returned the original home site, so he was brought back to the Cat House for treatment and he has just thrived!
+                        Initially, he was kept in a large cage, where he could get used to his new surroundings in a small space and recuperate!  Midnight very quickly became a favorite of all who came in to care for him. We all marvelled at and were inspired by not only with his will to survive but his ability to adapt and thrive in a new situation. Soon Midnight was moved to a room, where he could roam a little bit, but with definite boundaries so he would feel safe and secure.  He quickly became the official welcoming committee to the new kitties being taken into the Cat House.  All seem drawn to him.  He is a calming influence on the sometimes very scared cats and kittens.  He also welcomes volunteers and visitors alike with purrs and head butts. 
+                        A year later finds Midnight healthy and happy but without a permanent forever home! We adore having Midnight in the Cat House, but we think he deserves having a home where people  lavish attention on him and give him that stable environment that would make his life so much easier.
+                        Can you give a vision-impaired, lovable, handsome, smart  senior cat that perfect home? In return, Midnight will complete your life with unconditional love, and the privilege of giving  him belly rubs and scratchies on a daily basis.  And if he sometimes mistakes your leg for a scratching post, it will just add to his charm! Please continue reading about another senior kitty who was adopted and the joy and happiness he's brought to his new cat parents!
+
+                </p>
+                <p>Story From: Karen Menatti</p>
+                </Jumbotron>
+            </Container>
+            <Container>
+                <h2 className="headline">Special Adoption Completed!</h2>
                 <Jumbotron className="home-jumbotron">
                     <h3 className="headline">Meet Marco, a rescue from the house fire kitties!</h3>
                     <img className="storypic" src={`${process.env.PUBLIC_URL}/assets/marco.jpg`} />
