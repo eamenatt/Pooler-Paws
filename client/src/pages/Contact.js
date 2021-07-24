@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
-// import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import "./style.css";
@@ -74,7 +74,7 @@ function Contact() {
                 <li>XL Piddle Pads</li>
            </ul>
         </Jumbotron>
-//       <ContactForm />
+      <ContactForm />
     </div>
   );
 }
