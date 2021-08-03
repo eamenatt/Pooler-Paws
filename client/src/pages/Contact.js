@@ -78,7 +78,7 @@ function Contact() {
                 <li>XL Piddle Pads</li>
             </ul>
         </Jumbotron>
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
   );
 }
