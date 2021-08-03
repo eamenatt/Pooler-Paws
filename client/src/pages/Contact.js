@@ -68,7 +68,7 @@ function Contact() {
                 <li>Paypal: <a href="paypal.me/poolerpaws2">paypal.me/poolerpaws2</a></li>
            </ul>
             <p>
-                Should you wish to donate goods directly, please use the contact form below and we will reach out to you for delivery/pick up.  Some items we are always in need of:  
+                Should you wish to donate goods directly, please contact us via social media to schedule delivery/pick up.  Some items we are always in need of:  
             </p>
             <ul>
                 <li>Canned and dry cat food.  </li>
