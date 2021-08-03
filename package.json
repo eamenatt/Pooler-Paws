@@ -42,6 +42,7 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "react-gauge-chart": "^0.3.0",
+    "react-https-redirect": "^1.1.0",
     "redux-react-session": "^2.6.1",
     "use-force-update": "^1.0.7"
   }
