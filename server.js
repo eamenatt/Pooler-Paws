@@ -11,14 +11,14 @@ app.use(express.json());
 
 
 // Serve up static assets (usually on heroku)
-if(process.env.NODE_ENV === 'production') {
-  app.use((req, res, next) => {
-    if (req.header('x-forwarded-proto') !== 'https')
-      res.redirect(`https://${req.header('host')}${req.url}`)
-    else
-      next()
-  })
-}
+// if(process.env.NODE_ENV === 'production') {
+//   app.use((req, res, next) => {
+//     if (req.header('x-forwarded-proto') !== 'https')
+//       res.redirect(`https://${req.header('host')}${req.url}`)
+//     else
+//       next()
+//   })
+// }
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
