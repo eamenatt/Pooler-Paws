@@ -65,7 +65,7 @@ function Contact() {
            <ul>
                 <li>Venmo @Julianne-Haynes-2</li>
                 <li>You can also visit our Amazon Wish list here: <a href="https://www.amazon.com/hz/wishlist/ls/1ZNQ7OHQHVPSX?ref_=wl_share">Pooler Paws Amazon Wish List</a></li>
-                <li>Paypal: <a href="paypal.me/poolerpaws2">paypal.me/poolerpaws2</a></li>
+                <li>Paypal: <a href="https://www.paypal.me/poolerpaws2">paypal.me/poolerpaws2</a></li>
            </ul>
             <p>
                 Should you wish to donate goods directly, please contact us via social media to schedule delivery/pick up.  Some items we are always in need of:  
