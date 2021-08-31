@@ -66,6 +66,7 @@ body{
 .pet-list-text {
   color: white; 
   text-align: center;
+  font-size: 1rem;
 }
 
 .pet-list-card {
@@ -76,6 +77,7 @@ body{
   color: white;
   text-align: center;
   border-radius: 25px;
+  display: inline-block;
 }
 
 .headline {
@@ -108,7 +110,7 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 33%;
+  width: 75%;
   padding: 5px;
 }
 
@@ -148,4 +150,8 @@ li {
   margin-left: auto;
   margin-right: auto;
   align-content: center;
+}
+
+#petListbox {
+  columns: 2 auto;
 }

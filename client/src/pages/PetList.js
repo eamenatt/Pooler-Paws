@@ -84,13 +84,14 @@ function PetList() {
   }, []);
 
   return (
+
     <div>
       <Alert className="alert-fixed" show={danger} variant="danger" onClose={() => setDangerAlert(false)} dismissible>You have already like this cat!</Alert>
       <Alert className="alert-fixed" show={success} variant="success" onClose={() => setSuccessAlert(false)} dismissible>Cat Succesfully Liked!</Alert>
       <Header />
       <Navigation />
       <h2 className="orange-text">Looking for a home</h2>
-      <Container>
+      <Container id="petListbox">
         <Row>
           <Col size="md-12">
             {state.cats.map(cat => (
@@ -102,7 +103,7 @@ function PetList() {
                   <Card.Text className="pet-list-text">
                     {cat.details}
                   </Card.Text>
-                  <Card.Subtitle className="mb-2 pet-list-text">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle>
+                  {/* <Card.Subtitle className="mb-2 pet-list-text">Status: {cat.adopted = true ? "Available for Adoption" : "Not Available for Adoption"}</Card.Subtitle> */}
                   {state.currentUser._id !== 0 ?
                     <div>
                       <Button onClick={(event) => { addFavorite(event, cat) }}>Like</Button>
