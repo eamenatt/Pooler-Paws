@@ -60,8 +60,6 @@ function Home() {
           <p className="home-body">
             We are a local non-profit (501C3) organization helping the feral cat community in Pooler, GA and surrounding areas. Our members are kind- hearted, caring, generous cat-loving humans! Our mission is to trap, neuter and return feral cats in our area. We also re-home cats/kittens that demonstrate friendly or nonferal behavior. This includes feeding, trapping, fostering and transporting to and from vet offices for medical needs or sterilization. There are hundreds of feral cats in our area (and counting). We have 17 members in our group. These individuals provide their time and money to care for these animals.
             </p>
-          <p className="home-body">**Due to unforeseen circumstances, the CATURDAY adoption event AT Bentley’s Pet Stuff, that was scheduled for October 16, has been cancelled.  See you in November!**
-            </p>
             {/* <img
                     className="homeImage"
                     src={`${process.env.PUBLIC_URL}/assets/septemberdates.png`}
