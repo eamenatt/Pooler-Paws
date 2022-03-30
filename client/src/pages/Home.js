@@ -63,7 +63,7 @@ function Home() {
             <img
                     className="homeImage"
                     src={`${process.env.PUBLIC_URL}/assets/Caturday.jpg`}
-                    alt="Pooler Paws October Adoption events"
+                    alt="Pooler Paws April Adoption event flyer"
                 />
         </Jumbotron>
         <Slides />
