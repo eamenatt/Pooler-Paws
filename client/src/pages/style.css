@@ -155,3 +155,11 @@ li {
 #petListbox {
   columns: 2 auto;
 }
+
+.qrCode {
+  width: 15%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
